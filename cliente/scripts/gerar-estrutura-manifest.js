@@ -45,10 +45,13 @@ function walk(dir, baseRel) {
   return children;
 }
 
-const tree = walk(contextoDir, '');
+const contextoExists = fs.existsSync(contextoDir);
+const tree = contextoExists ? walk(contextoDir, '') : [];
 const payload = {
   generatedAt: new Date().toISOString(),
   rootLabel: 'contexto',
+  /** false = pasta contexto/ ainda não existe na raiz do pacote */
+  contextoExists,
   note:
     'Gerado por node cliente/scripts/gerar-estrutura-manifest.js. Rode de novo após criar ou alterar arquivos em contexto/.',
   children: tree,
@@ -57,6 +60,10 @@ const payload = {
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
 fs.writeFileSync(outFile, JSON.stringify(payload, null, 2), 'utf8');
 
-const status = fs.existsSync(contextoDir) ? 'ok' : 'aviso: pasta contexto/ ainda não existe';
+const status = contextoExists
+  ? tree.length
+    ? 'ok'
+    : 'pasta vazia (ou só itens ocultos)'
+  : 'pasta contexto/ não existe';
 console.log(`estrutura-manifest.json → ${outFile}`);
-console.log(`Itens na raiz de contexto/: ${tree.length} (${status})`);
+console.log(`contextoExists=${contextoExists} · itens na raiz: ${tree.length} (${status})`);

@@ -55,6 +55,124 @@
   border-bottom: 0.5px solid var(--border);
 }
 
+.explorador-empty-callout {
+  background: var(--surf);
+  border: 0.5px solid var(--border2);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.explorador-empty-callout h3 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.explorador-empty-callout p {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.55;
+  margin: 0.4rem 0 0;
+}
+
+.explorador-empty-callout code {
+  font-family: var(--mono);
+  font-size: 11px;
+  background: var(--bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.explorador-search-wrap {
+  margin-bottom: 0.85rem;
+}
+
+.explorador-search-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 6px;
+}
+
+.explorador-search {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 0.5px solid var(--border2);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.explorador-search::placeholder {
+  color: var(--ink3);
+}
+
+.explorador-search:focus {
+  outline: 2px solid var(--amber-dim);
+  border-color: var(--amber);
+}
+
+.explorador-search-status {
+  font-size: 11px;
+  color: var(--ink3);
+  margin-top: 6px;
+  min-height: 1.2em;
+}
+
+.explorador-search-results {
+  margin-top: 0.5rem;
+  max-height: min(50vh, 400px);
+  overflow: auto;
+}
+
+.explorador-search-results ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.explorador-search-hit {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 8px 10px;
+  margin: 2px 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink2);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.explorador-search-hit:hover {
+  background: var(--amber-dim);
+  color: var(--ink);
+}
+
+.explorador-search-hit.is-active {
+  background: var(--amber-dim);
+  color: var(--amber);
+  outline: 0.5px solid var(--amber);
+}
+
+.explorador-search-hit-path {
+  display: block;
+  font-size: 10px;
+  color: var(--ink3);
+  margin-top: 2px;
+}
+
 .tree ul {
   list-style: none;
   margin: 0;

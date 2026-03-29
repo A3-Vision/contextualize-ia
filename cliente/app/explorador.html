@@ -33,7 +33,15 @@
     <div class="explorador-layout">
       <aside class="explorador-panel explorador-panel--tree" aria-label="Árvore de pastas">
         <h2>Estrutura</h2>
-        <div id="explorador-tree-mount"></div>
+        <div id="explorador-tree-root-label" class="tree-root-label"></div>
+        <div id="explorador-empty-callout" class="explorador-empty-callout" hidden></div>
+        <div id="explorador-search-wrap" class="explorador-search-wrap" hidden>
+          <label class="explorador-search-label" for="explorador-search">Pesquisar arquivos</label>
+          <input type="search" id="explorador-search" class="explorador-search" placeholder="Nome ou caminho (ex.: CONTEXT, docs/prd)" autocomplete="off" spellcheck="false" />
+          <p id="explorador-search-status" class="explorador-search-status" aria-live="polite"></p>
+        </div>
+        <div id="explorador-tree-body" class="tree"></div>
+        <div id="explorador-search-results" class="explorador-search-results" hidden></div>
         <p id="explorador-manifest-meta" class="explorador-meta"></p>
       </aside>
       <section class="explorador-panel explorador-panel--preview" aria-label="Pré-visualização">
