@@ -22,6 +22,9 @@ Quem já usa IA no dia a dia e quer **manual em arquivo** (não só no chat), co
 | **[cliente/templates/TEMPLATE-CONTEXT.md](./cliente/templates/TEMPLATE-CONTEXT.md)** | Modelo de CONTEXT com seção “perguntas em aberto” e ritual de evolução |
 | **[home.html](./home.html)** | Boas-vindas (conteúdo do produto, sem linguagem comercial) |
 | **[cliente/app/index.html](./cliente/app/index.html)** | Como usar: copiar PRD na IDE |
+| **[cliente/app/explorador.html](./cliente/app/explorador.html)** | Árvore de **`contexto/`** + renderização de `.md` (requer servidor HTTP + manifesto) |
+| **[cliente/app/estrutura-manifest.json](./cliente/app/estrutura-manifest.json)** | Lista de arquivos gerada por script — alimenta o explorador |
+| **[cliente/scripts/gerar-estrutura-manifest.js](./cliente/scripts/gerar-estrutura-manifest.js)** | `node cliente/scripts/gerar-estrutura-manifest.js` na raiz do pacote |
 | **[cliente/app/diagnostico.html](./cliente/app/diagnostico.html)** | Autoavaliação / travas / próximos passos (não é página de vendas) |
 | **[cliente/app/diagnostico-page-content.json](./cliente/app/diagnostico-page-content.json)** | Copy para espelhar o diagnóstico em outro front, se precisar |
 | **[cliente/app/download-config.js](./cliente/app/download-config.js)** | `DOWNLOAD_ZIP_URL` — URL pública do ZIP, se aplicável |
@@ -30,7 +33,7 @@ Quem já usa IA no dia a dia e quer **manual em arquivo** (não só no chat), co
 
 **Fluxo sugerido:** `home.html` → ler `cliente/app/index.html` → abrir **`cliente/templates/PRD-BASE-AGENTE-IDE.md`** → colar no agente. **Diagnóstico** é opcional.
 
-A trilha longa M0–M8 está só em Markdown em **`cliente/conteudo/`** (leitura fora da IDE ou no editor); não há mais player de curso no navegador neste pacote.
+A trilha longa M0–M8 está só em Markdown em **`cliente/conteudo/`** (leitura fora da IDE ou no editor). O **explorador** é uma visão simples da pasta **`contexto/`** no navegador (não substitui IDE nem futuro app Next.js).
 
 ---
 

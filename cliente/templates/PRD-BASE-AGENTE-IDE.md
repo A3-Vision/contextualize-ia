@@ -78,5 +78,6 @@ Este PRD faz parte do pacote **Contextualize IA** (A3 Vision). Templates adicion
 3. **`cliente/`**, **`home.html`** e o **README do produto** na raiz são **distribuição / landing** — **não** edite; a criação do manual do usuário é **só** em **`contexto/`**.
 4. Arquivos **`cliente/app/`** (HTML, `landing.css`, `diagnostico*.json`, `download-config.js`) são interface no navegador — **não** recriar dentro de `contexto/`.
 5. Se o usuário abriu **outro** repositório (vazio ou já existente) **sem** o pacote, aplique a mesma regra: tudo que você criar para o manual vivo vai em **`contexto/`** na raiz desse repo; use `TEMPLATE-CONTEXT` só se o usuário anexar ou colar o trecho.
+6. **Explorador (opcional, humano):** o pacote pode incluir `cliente/app/explorador.html` e o script `cliente/scripts/gerar-estrutura-manifest.js`. Quem quiser ver `contexto/` no navegador roda o script e serve a pasta raiz com HTTP (ex.: `npx serve`); isso **não** é obrigatório para o fluxo PRD → agente.
 
 **Nota:** o agente **não** “lê o repositório inteiro” automaticamente só por colar este PRD — depende do que está no contexto da sessão e das ferramentas da IDE. Por isso este PRD é auto-suficiente; os templates reforçam o resultado quando você os abre ou incorpora.
