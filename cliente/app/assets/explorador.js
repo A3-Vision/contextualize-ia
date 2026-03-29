@@ -7,6 +7,12 @@
   var flatFiles = [];
   var previewEl = document.getElementById('explorador-preview');
   var previewTitle = document.getElementById('explorador-preview-title');
+  var lastPreviewRawText = '';
+
+  var EXPLORADOR_COPY_FILE_BTN =
+    '<button type="button" class="code-copy-btn code-copy-btn--labeled" id="explorador-copy-all" aria-label="Copiar conteúdo do arquivo">' +
+    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
+    '<span class="code-copy-btn-label">Copiar arquivo</span></button>';
 
   function el(tag, attrs, children) {
     var n = document.createElement(tag);
@@ -83,17 +89,33 @@
         return r.text();
       })
       .then(function (text) {
+        lastPreviewRawText = text;
         var lower = relPath.toLowerCase();
+        var toolbar =
+          '<div class="explorador-preview-toolbar">' + EXPLORADOR_COPY_FILE_BTN + '</div>';
         if (lower.endsWith('.md') && typeof marked !== 'undefined') {
           marked.setOptions({ breaks: true, gfm: true });
           previewEl.innerHTML =
-            '<div class="md-content">' + marked.parse(text) + '</div>';
+            toolbar +
+            '<div class="explorador-preview-body md-content">' +
+            marked.parse(text) +
+            '</div>';
         } else {
           previewEl.innerHTML =
-            '<p class="explorador-meta">Pré-visualização em texto (não é .md ou marked indisponível).</p><pre style="font-size:12px;overflow:auto;max-height:55vh">' +
+            toolbar +
+            '<p class="explorador-meta">Pré-visualização em texto (não é .md ou marked indisponível).</p><pre class="explorador-plain-pre" style="font-size:12px;overflow:auto;max-height:55vh">' +
             escapeHtml(text.slice(0, 120000)) +
             (text.length > 120000 ? '\n\n… (truncado)' : '') +
             '</pre>';
+        }
+        var copyAll = document.getElementById('explorador-copy-all');
+        if (copyAll && typeof window.copyToClipboard === 'function') {
+          copyAll.addEventListener('click', function () {
+            window.copyToClipboard(lastPreviewRawText, copyAll);
+          });
+        }
+        if (typeof window.initCodeCopyUI === 'function') {
+          window.initCodeCopyUI(previewEl);
         }
       })
       .catch(function (err) {

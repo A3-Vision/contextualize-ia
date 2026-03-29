@@ -5,6 +5,7 @@
 - **`estrutura-manifest.json`** — gerado pelo script em **`../scripts/`**; versionar ou regenerar após mudanças em `contexto/`.
 - **`explorador.css`** — layout do explorador.
 - **`assets/explorador.js`** — lógica da árvore e fetch dos arquivos.
+- **`assets/copy-ui.js`** — botão copiar em blocos `<pre>` (comandos na landing / `index.html`; trechos em `.md` e texto no explorador).
 - **`assets/app-shell.css`** — fundo em gradiente, cards e botões de navegação compartilhados por `index.html`, `diagnostico.html` e `explorador.html` (alinhado à `home.html`).
 - **`produto-page-content.json`** — resumo neutro do pacote (textos genéricos; sem preço nem CTA de venda). Útil se quiser espelhar o produto em outro front; a página de venda fica à parte.
 - **`diagnostico.html`** — autoavaliação em abas; usa `assets/app.js` e `assets/theme.js`.

@@ -653,6 +653,81 @@ html::-webkit-scrollbar-corner {
   margin-top: 0;
 }
 
+/* Copiar bloco de código (landing, explorador .md, etc.) */
+.code-copy-wrap {
+  position: relative;
+  margin: 0 0 0.5rem;
+}
+
+.code-copy-wrap pre {
+  margin-bottom: 0;
+  padding-top: 2.35rem;
+  padding-right: 2.75rem;
+}
+
+.code-copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid var(--border2);
+  background: rgba(30, 30, 28, 0.92);
+  color: var(--ink2);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.code-copy-btn:hover {
+  color: var(--teal);
+  border-color: rgba(61, 212, 180, 0.45);
+}
+
+.code-copy-btn.is-copied {
+  color: var(--teal);
+  border-color: var(--teal);
+}
+
+.code-copy-btn--labeled {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  min-height: 32px;
+  padding: 6px 12px;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.code-copy-btn--labeled svg {
+  flex-shrink: 0;
+}
+
+[data-theme="light"] .code-copy-btn {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--ink2);
+}
+
+.explorador-panel--preview .code-copy-wrap .code-copy-btn {
+  background: rgba(10, 14, 22, 0.85);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(203, 213, 225, 0.9);
+}
+
+[data-theme="light"] .explorador-panel--preview .code-copy-btn {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(15, 23, 42, 0.12);
+  color: var(--ink2);
+}
+
 @media (max-width: 540px) {
   .card-grid {
     grid-template-columns: 1fr;

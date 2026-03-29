@@ -302,6 +302,23 @@ body:has(.landing-shell) {
   color: var(--ink);
 }
 
+.landing-shell .code-copy-btn {
+  background: rgba(10, 14, 22, 0.88);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.landing-shell .code-copy-btn:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  color: #5eead4;
+}
+
+[data-theme="light"] .landing-shell .code-copy-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(15, 23, 42, 0.12);
+  color: var(--ink2);
+}
+
 .landing-server-wrap {
   margin-top: 1.5rem;
 }
