@@ -27,14 +27,14 @@
 
     <main class="md-content" style="padding-top: 0.5rem;">
       <p>O pacote entrega uma <strong>base</strong>: um PRD em Markdown feito para você colar no chat do <strong>Cursor</strong>, <strong>VS Code</strong> (Copilot), <strong>Antigravity</strong> ou outro agente que leia a pasta do projeto.</p>
-      <p>O agente usa esse texto para <strong>criar a estrutura</strong> (pastas, <code>CONTEXT.md</code>, <code>README</code>, <code>docs/</code>, <code>decisoes/</code> quando fizer sentido). O <code>CONTEXT.md</code> deve ser <strong>vivo</strong>: o agente faz perguntas, você responde, e o manual é atualizado junto com o seu contexto — nada de “template morto”.</p>
+      <p>O agente usa esse texto para <strong>criar a estrutura dentro de <code>contexto/</code></strong> na raiz do repositório (pastas, <code>contexto/CONTEXT.md</code>, <code>README</code>, <code>docs/</code>, <code>decisoes/</code> quando fizer sentido). O manual não mistura com o pacote em <code>cliente/</code>. O <code>CONTEXT.md</code> deve ser <strong>vivo</strong>: o agente faz perguntas, você responde, e o manual é atualizado junto com o seu contexto — nada de “template morto”.</p>
 
       <h2>Passos</h2>
       <ol>
         <li>Crie uma pasta vazia (ou abra um repositório Git) no seu computador.</li>
         <li>Abra essa pasta no <strong>Cursor / VS Code / Antigravity</strong>.</li>
         <li>Abra o arquivo <code>cliente/templates/PRD-BASE-AGENTE-IDE.md</code> deste pacote, <strong>selecione tudo</strong> e <strong>cole no chat do agente</strong> (ou anexe o arquivo, se a IDE permitir).</li>
-        <li>Responda às perguntas do agente. Deixe que ele proponha a árvore de pastas e o primeiro <code>CONTEXT.md</code> — depois vocês refinam juntos.</li>
+        <li>Responda às perguntas do agente. Deixe que ele proponha a árvore sob <code>contexto/</code> e o primeiro <code>contexto/CONTEXT.md</code> — depois vocês refinam juntos.</li>
       </ol>
 
       <div class="callout" style="margin-top: 1.25rem;">

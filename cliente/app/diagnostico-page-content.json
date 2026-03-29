@@ -38,8 +38,8 @@
     "titulo": "03 · Próximo passo sugerido",
     "passos": [
       "Abrir a pasta do projeto na IDE.",
-      "Colar o conteúdo de templates/PRD-BASE-AGENTE-IDE.md no chat do agente.",
-      "Responder às perguntas até existir um CONTEXT.md inicial com lacunas explícitas.",
+      "Colar o conteúdo de cliente/templates/PRD-BASE-AGENTE-IDE.md no chat do agente.",
+      "Responder às perguntas até existir um contexto/CONTEXT.md inicial com lacunas explícitas.",
       "Versionar (Git) quando fizer sentido — pequenos commits quando regras mudarem."
     ],
     "principio": "A estrutura final é sua — o produto entrega a base de criação (PRD + templates). O agente adapta ao que você disser."
@@ -47,7 +47,7 @@
   "secao_checklist": {
     "titulo": "04 · Checklist rápido",
     "itens": [
-      "Existe um CONTEXT.md na raiz (ou caminho acordado com o agente)?",
+      "Existe contexto/CONTEXT.md (ou caminho acordado com o agente)?",
       "O CONTEXT diz o que o agente deve ler primeiro e o que não deve inventar?",
       "Há lugar para decisões (decisoes/ ou similar) quando algo importante mudar?",
       "O .gitignore protege o que não deve subir para o remoto?"

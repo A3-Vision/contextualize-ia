@@ -1,6 +1,6 @@
 # Produto — Contextualize IA (base para contexto com IA na IDE)
 
-**O que o produto é:** uma **base de criação** — em especial o **`cliente/templates/PRD-BASE-AGENTE-IDE.md`**, para o usuário **copiar e colar no chat do agente** (Cursor, VS Code, Antigravity, etc.) com a pasta do projeto aberta. O agente propõe **estrutura, pastas e um `CONTEXT.md` vivo** (perguntas e respostas; atualização contínua), adaptado à necessidade de cada pessoa. O pacote não substitui a conversa com o agente: **é o ponto de partida**.
+**O que o produto é:** uma **base de criação** — em especial o **`cliente/templates/PRD-BASE-AGENTE-IDE.md`**, para o usuário **copiar e colar no chat do agente** (Cursor, VS Code, Antigravity, etc.) com a pasta do projeto aberta. O PRD manda o agente criar o manual vivo **dentro de `contexto/`** na raiz do repositório (`contexto/CONTEXT.md`, `docs/`, `decisoes/`, etc.), **sem** editar o pacote em `cliente/` nem `home.html`. O pacote não substitui a conversa com o agente: **é o ponto de partida**.
 
 **Tipo:** toolkit (Markdown + HTML opcional + material de apoio em `cliente/conteudo/`).
 

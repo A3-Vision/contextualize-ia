@@ -5,7 +5,8 @@
 **Versão:** 1.3  
 **Formato:** guia único em Markdown (módulos M0 a M8)  
 **Pré-requisitos:** nenhum — saber criar pasta e arquivo no computador já basta.  
-**Templates:** use a pasta [templates/](../templates/) junto com este documento.
+**Templates:** use a pasta [templates/](../templates/) junto com este documento.  
+**Árvore viva:** o PRD base orienta a colocar o manual em **`contexto/`** na raiz do repositório; este guia usa essa convenção onde fala em `CONTEXT.md` e pastas irmãs.
 
 **Prefere começar sem terminal ou IDE?** Leia antes [publico-e-acessibilidade.md](./publico-e-acessibilidade.md) (metáforas, medos comuns, **Trilha guiada** passo a passo).
 
@@ -27,7 +28,7 @@
 1. Leia o **M0** inteiro antes de instalar qualquer coisa.  
 2. Siga a ordem **M1 → M2 → …** ou pule para o módulo indicado como *opcional*.  
 3. Ao final de cada módulo, faça o **exercício** (15–30 min).  
-4. **Projeto final:** repo privado com `CONTEXT.md` + `README.md` + `docs/prd.md` + pelo menos **uma decisão** em `decisoes/` ou nota datada (na **Trilha guiada**, “decisão” pode ser um parágrafo em `decisoes/minha-primeira-decisao.md`).
+4. **Projeto final:** repo privado com `contexto/CONTEXT.md` + `contexto/README.md` + `contexto/docs/prd.md` + pelo menos **uma decisão** em `contexto/decisoes/` ou nota datada (na **Trilha guiada**, “decisão” pode ser um parágrafo em `contexto/decisoes/minha-primeira-decisao.md`).
 
 ---
 
@@ -66,7 +67,7 @@ Escreva em 5 linhas: *para que* você quer este repo agora (estudo, negócio, pr
 5. Crie seus arquivos nessa pasta com **Bloco de Notas**, **Notepad++**, ou edite pelo **site do GitHub** (Add file → Create new file) se preferir **zero instalação** além do navegador.  
 6. Para “salvar na nuvem” com GitHub Desktop: você verá as mudanças → escreva uma mensagem curta (ex.: “Primeiro CONTEXT”) → **Commit to main** → **Push origin**.
 
-**Usar IA:** abra o ChatGPT (ou outro), e no **primeiro** prompt cole o conteúdo do seu `CONTEXT.md` (quando existir) ou diga: “Vou colar meu manual de regras na próxima mensagem.” Assim o contexto fica **próximo** (no arquivo que você vê) **e** no agente (na conversa).
+**Usar IA:** abra o ChatGPT (ou outro), e no **primeiro** prompt cole o conteúdo do seu `contexto/CONTEXT.md` (quando existir) ou diga: “Vou colar meu manual de regras na próxima mensagem.” Assim o contexto fica **próximo** (no arquivo que você vê) **e** no agente (na conversa).
 
 ---
 
@@ -118,7 +119,7 @@ git push                 # enviar para o remoto
 
 ### Princípio
 
-Comece **pequeno**: `CONTEXT.md`, `README.md`, `docs/`, `.gitignore`. Expanda quando doer (muitos arquivos na mesma pasta).
+Comece **pequeno** dentro de **`contexto/`**: `CONTEXT.md`, `README.md`, `docs/`, e `.gitignore` na raiz do repo. Expanda quando doer (muitos arquivos na mesma pasta).
 
 ### Referência
 
@@ -132,9 +133,9 @@ Veja [templates/estrutura-pastas-minima.md](../templates/estrutura-pastas-minima
 
 ### Exercício M2
 
-1. Na raiz do repo clonado, crie: `docs/`, `decisoes/`.  
-2. Copie [templates/TEMPLATE-gitignore.txt](../templates/TEMPLATE-gitignore.txt) para `.gitignore`.  
-3. Copie [templates/TEMPLATE-README-raiz.md](../templates/TEMPLATE-README-raiz.md) para `README.md` e ajuste o título.  
+1. Na raiz do repo clonado, crie a pasta **`contexto/`** e dentro dela: `docs/`, `decisoes/`.  
+2. Copie [templates/TEMPLATE-gitignore.txt](../templates/TEMPLATE-gitignore.txt) para `.gitignore` na raiz do repositório.  
+3. Copie [templates/TEMPLATE-README-raiz.md](../templates/TEMPLATE-README-raiz.md) para `contexto/README.md` e ajuste o título.  
 4. Commit: `docs: estrutura inicial e gitignore`.
 
 ---
@@ -143,7 +144,7 @@ Veja [templates/estrutura-pastas-minima.md](../templates/estrutura-pastas-minima
 
 ### Função
 
-`CONTEXT.md` é o **primeiro arquivo** que o agente deve ler. Ele concentra:
+`contexto/CONTEXT.md` é o **primeiro arquivo** que o agente deve ler. Ele concentra:
 
 - regra zero (perguntar, não inventar);  
 - mapa do repositório (onde gravar o quê);  
@@ -155,11 +156,11 @@ Use [templates/TEMPLATE-CONTEXT.md](../templates/TEMPLATE-CONTEXT.md): preencha 
 
 ### Dica de uso
 
-Ao abrir o chat, use uma instrução fixa: *“Leia o arquivo CONTEXT.md na raiz antes de sugerir mudanças.”*
+Ao abrir o chat, use uma instrução fixa: *“Leia o arquivo contexto/CONTEXT.md antes de sugerir mudanças.”*
 
 ### Exercício M3
 
-1. Crie `CONTEXT.md` a partir do template.  
+1. Crie `contexto/CONTEXT.md` a partir do template.  
 2. Preencha pelo menos: **regra zero**, **mapa do repo** (3–5 linhas na tabela), **o que o agente não deve fazer**.  
 3. Pergunte ao agente para resumir o CONTEXT em 5 linhas. Ajuste o texto se o resumo estiver errado.  
 4. Commit: `docs: CONTEXT inicial`.
@@ -174,12 +175,12 @@ O **PRD** responde: *por que este repositório existe?* e *o que entra / não en
 
 ### Como copiar
 
-[Templates/TEMPLATE-PRD-repo-contexto.md](../templates/TEMPLATE-PRD-repo-contexto.md) → salve como `docs/prd.md`.
+[Templates/TEMPLATE-PRD-repo-contexto.md](../templates/TEMPLATE-PRD-repo-contexto.md) → salve como `contexto/docs/prd.md`.
 
 ### Exercício M4
 
 1. Preencha objetivo, escopo e “não é”.  
-2. Link no `README.md` apontando para `docs/prd.md`.  
+2. Link no `contexto/README.md` apontando para `docs/prd.md`.  
 3. Commit.
 
 ---
@@ -192,15 +193,15 @@ No mesmo disco você pode ter **várias dimensões** da vida. Três camadas comu
 
 | Camada | Exemplos de conteúdo | Onde guardar |
 |--------|----------------------|--------------|
-| Negócio / trabalho | proposta, ICP, processos | `negocio/`, `clientes/`, `vendas/` |
-| Técnico | stack, ADRs, decisões de tool | `decisoes/`, `docs/tecnico/` |
-| Pessoal / estudo | plano de estudo, certificação | `pessoal/` ou outro repo separado |
+| Negócio / trabalho | proposta, ICP, processos | `contexto/negocio/`, `contexto/clientes/`, etc. |
+| Técnico | stack, ADRs, decisões de tool | `contexto/decisoes/`, `contexto/docs/tecnico/` |
+| Pessoal / estudo | plano de estudo, certificação | `contexto/pessoal/` ou outro repo separado |
 
 **Regra:** se misturar tudo, o agente confunde prioridades. Separe **pastas** ou **repos** (alguns preferem dois repos: trabalho vs. pessoal).
 
 ### Exercício M5
 
-Escolha **uma** camada que não existe ainda e crie uma pasta + README de uma linha. Atualize a tabela do `CONTEXT.md`.
+Escolha **uma** camada que não existe ainda e crie uma pasta + README de uma linha **dentro de `contexto/`**. Atualize a tabela do `contexto/CONTEXT.md`.
 
 ---
 
@@ -248,7 +249,7 @@ Faça **3 commits** em dias diferentes, mesmo que pequenos, descrevendo mudança
 
 ### ADR (Architecture Decision Record)
 
-Decisões que você não quer “reabrir” sem motivo: **uma decisão** por arquivo em `decisoes/`. Modelo: [templates/TEMPLATE-ADR-001-exemplo.md](../templates/TEMPLATE-ADR-001-exemplo.md).
+Decisões que você não quer “reabrir” sem motivo: **uma decisão** por arquivo em `contexto/decisoes/`. Modelo: [templates/TEMPLATE-ADR-001-exemplo.md](../templates/TEMPLATE-ADR-001-exemplo.md).
 
 ### Regras do Cursor / VS Code
 
@@ -260,7 +261,7 @@ Para experimentos grandes: `git checkout -b experimento/nova-estrutura` — merg
 
 ### Exercício M8
 
-Registre **uma** decisão real (mesmo pequena) em `decisoes/ADR-001-algo.md` usando o template.
+Registre **uma** decisão real (mesmo pequena) em `contexto/decisoes/ADR-001-algo.md` usando o template.
 
 ---
 
@@ -269,11 +270,11 @@ Registre **uma** decisão real (mesmo pequena) em `decisoes/ADR-001-algo.md` usa
 Entregue (para você mesmo ou para um mentor):
 
 1. Repositório **privado** no Git com histórico de commits.  
-2. `CONTEXT.md` preenchido e testado com o agente.  
-3. `README.md` com índice.  
-4. `docs/prd.md` completo.  
-5. Pelo menos **uma** decisão em `decisoes/` ou nota datada.  
-6. `.gitignore` adequado.
+2. `contexto/CONTEXT.md` preenchido e testado com o agente.  
+3. `contexto/README.md` com índice.  
+4. `contexto/docs/prd.md` completo.  
+5. Pelo menos **uma** decisão em `contexto/decisoes/` ou nota datada.  
+6. `.gitignore` adequado na raiz do repositório.
 
 ---
 

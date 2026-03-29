@@ -30,10 +30,11 @@ Marque conforme avança. Tempo estimado: **1–3 horas** na primeira vez.
 - [ ] Repo **privado** criado no GitHub (site).  
 - [ ] **Guiada:** no GitHub Desktop → **Clone** do repo para pasta fácil (ex.: `Documentos/meu-contexto`).  
 - [ ] **Profissional:** `git clone` no terminal.  
-- [ ] Copiei **TEMPLATE-gitignore** → `.gitignore` na raiz.  
-- [ ] Copiei **TEMPLATE-README-raiz** → `README.md` (ajustei título).  
-- [ ] Copiei **TEMPLATE-CONTEXT** → `CONTEXT.md` (preenchi nome e regras mínimas).  
-- [ ] Criei `docs/` e coloquei **TEMPLATE-PRD** como `docs/prd.md`.  
+- [ ] Copiei **TEMPLATE-gitignore** → `.gitignore` na raiz do repositório.  
+- [ ] Criei a pasta **`contexto/`** na raiz (se ainda não existir).  
+- [ ] Copiei **TEMPLATE-README-raiz** → `contexto/README.md` (ajustei título).  
+- [ ] Copiei **TEMPLATE-CONTEXT** → `contexto/CONTEXT.md` (preenchi nome e regras mínimas).  
+- [ ] Criei `contexto/docs/` e coloquei **TEMPLATE-PRD** como `contexto/docs/prd.md`.  
 - [ ] **Guiada:** no GitHub Desktop — selecionar mudanças → **Summary** (mensagem) → **Commit** → **Push**.  
 - [ ] **Profissional:** `git add` → `git commit` → `git push`.
 
@@ -41,8 +42,8 @@ Marque conforme avança. Tempo estimado: **1–3 horas** na primeira vez.
 
 ## Primeiro uso com IA
 
-- [ ] **Guiada:** abri o arquivo `CONTEXT.md` no computador, copiei o texto e colei no **primeiro** prompt do chat (“Estas são as regras do meu projeto…”).  
-- [ ] **Profissional:** abri a **pasta** no Cursor/VS Code e pedi ao agente para ler `CONTEXT.md`.  
+- [ ] **Guiada:** abri o arquivo `contexto/CONTEXT.md` no computador, copiei o texto e colei no **primeiro** prompt do chat (“Estas são as regras do meu projeto…”).  
+- [ ] **Profissional:** abri a **pasta** no Cursor/VS Code e pedi ao agente para ler `contexto/CONTEXT.md`.  
 - [ ] Ajustei o CONTEXT se a resposta não bateu com o que eu quero.  
 - [ ] Salvei e fiz **segundo commit/push** (GitHub Desktop ou terminal).
 

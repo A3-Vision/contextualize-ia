@@ -1,5 +1,7 @@
 # CONTEXT.md — [NOME DO SEU PROJETO OU ORGANIZAÇÃO]
 
+**Localização no repositório:** `contexto/CONTEXT.md` (pasta `contexto/` na raiz do Git — manual vivo separado do pacote `cliente/` quando existir).
+
 ## Manual para o agente de IA — leitura obrigatória
 ### Atualizado em: YYYY-MM-DD
 
@@ -9,7 +11,7 @@ Este arquivo **não é estático para sempre**: quando você responder perguntas
 
 Este repositório é **[descreva em uma linha: ex. “só documentação e decisões”, “meu segundo cérebro”, “contexto do meu negócio”]**. **Não é** [o que não é: ex. código de produção, backup de fotos, banco de dados].
 
-**Regra zero:** em toda sessão com agente de IA, **ler este arquivo primeiro** (ou o trecho que o humano indicar). Se faltar decisão que só o humano pode tomar — **perguntar**; não inventar fatos, números, prazos ou promessas a terceiros.
+**Regra zero:** em toda sessão com agente de IA, **ler `contexto/CONTEXT.md` primeiro** (ou o trecho que o humano indicar). Se faltar decisão que só o humano pode tomar — **perguntar**; não inventar fatos, números, prazos ou promessas a terceiros.
 
 ---
 
@@ -20,7 +22,7 @@ Este repositório é **[descreva em uma linha: ex. “só documentação e decis
 
 ---
 
-**Documentos de apoio (opcional):** [listar links relativos, ex. `./docs/prd.md`, `./docs/identidade.md`]
+**Documentos de apoio (opcional):** [listar links relativos a `contexto/`, ex. `./docs/prd.md`, `./docs/identidade.md`]
 
 ---
 
@@ -48,9 +50,11 @@ Este repositório é **[descreva em uma linha: ex. “só documentação e decis
 
 ## 4. Mapa do repositório — onde gravar o quê
 
+*(Caminhos relativos à pasta **`contexto/`**.)*
+
 | Pasta ou arquivo | Uso |
 |------------------|-----|
-| `README.md` | Índice humano; primeiro contato com o repo |
+| `README.md` | Índice humano; primeiro contato com o manual |
 | `CONTEXT.md` | Este arquivo — regras do agente e mapa mental |
 | `docs/` | PRDs, especificações, identidade estendida |
 | `decisoes/` ou `adr/` | Decisões com data (formato livre ou ADR) |
@@ -86,7 +90,7 @@ Este repositório é **[descreva em uma linha: ex. “só documentação e decis
 ## 7. O que o agente **não** deve fazer
 
 - Não inventar [preços, prazos legais, dados de terceiros — personalize].  
-- Não apagar pastas template sem instrução explícita.  
+- Não apagar pastas de referência (`cliente/` do pacote) nem pastas do usuário em `contexto/` sem instrução explícita.  
 - [Suas regras]
 
 ---

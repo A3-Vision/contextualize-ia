@@ -1,6 +1,6 @@
 # Pasta `conteudo/` — o que entra aqui
 
-**Método principal do pacote (para quem compra ou baixa):** não está nesta pasta — está em **`../templates/PRD-BASE-AGENTE-IDE.md`** (colar no agente da IDE). O agente prioriza **`../templates/TEMPLATE-CONTEXT.md`** ao montar o repositório do usuário (ver seção 8 do PRD).
+**Método principal do pacote (para quem compra ou baixa):** não está nesta pasta — está em **`../templates/PRD-BASE-AGENTE-IDE.md`** (colar no agente da IDE). O PRD define que o manual vivo fica em **`contexto/`** na raiz do repositório do usuário; o agente prioriza **`../templates/TEMPLATE-CONTEXT.md`** como base para `contexto/CONTEXT.md` (ver seções 2–4 e 8 do PRD).
 
 | Arquivo | Papel |
 |---------|--------|
