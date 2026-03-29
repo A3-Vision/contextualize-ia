@@ -11,7 +11,7 @@ Objetivo: entregar um **produto vendável** cujo **núcleo** é **PRD + template
 | Fase 3 — Pacote de templates | **Feito** — ver [templates/README.md](../templates/README.md) |
 | Fase 4 — Redação do guia longo (M0–M8) | **Feito** — [curso-os-contexto-ia.md](./curso-os-contexto-ia.md) + [problemas-comuns.md](./problemas-comuns.md) (opcional para o usuário) |
 | Fase 0 — ICP e promessa comercial | Parcial — ver [publico-e-acessibilidade.md](./publico-e-acessibilidade.md); fechar no [README.md](../README.md) quando houver oferta pública |
-| Fase 5 — Embalagem e canal (HTML de entrada, ZIP, FAQ, oferta) | Parcial — `index.html`, `app/`, `diagnostico`, README do produto; pendente ZIP público estável, FAQ comercial, precificação no canal escolhido |
+| Fase 5 — Embalagem e canal (HTML de entrada, ZIP, FAQ, oferta) | Parcial — `home.html`, `app/`, README do produto; pendente ZIP público estável, FAQ comercial, precificação no canal escolhido |
 | Fase 6 — Piloto externo | Pendente |
 
 ---
@@ -91,10 +91,10 @@ Objetivo: entregar um **produto vendável** cujo **núcleo** é **PRD + template
 
 | Item | Descrição |
 |------|-----------|
-| Entrada do produto | Página de boas-vindas + instruções (`index.html`, `app/`); diagnóstico opcional; quando houver venda: problema, para quem, o que entra, preço, garantia |
+| Entrada do produto | Página de boas-vindas + instruções (`home.html`, `app/`); diagnóstico opcional; quando houver venda: problema, para quem, o que entra, preço, garantia |
 | FAQ | “Preciso saber programar?” “Funciona só com Cursor?” |
 | Política | Suporte por e-mail / comunidade / limites |
-| Distribuição | ZIP ou repo público; `download-config.js` com URL estável |
+| Distribuição | ZIP ou repo público; `app/download-config.js` com URL estável |
 
 ---
 
