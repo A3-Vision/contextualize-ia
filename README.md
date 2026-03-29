@@ -20,6 +20,8 @@ Quem já usa IA no dia a dia e quer **manual em arquivo** (não só no chat), co
 |----------|-----------|
 | **[cliente/templates/PRD-BASE-AGENTE-IDE.md](./cliente/templates/PRD-BASE-AGENTE-IDE.md)** | **Principal:** instruções para o agente montar o repo e manter CONTEXT vivo |
 | **[cliente/templates/TEMPLATE-CONTEXT.md](./cliente/templates/TEMPLATE-CONTEXT.md)** | Modelo de CONTEXT com seção “perguntas em aberto” e ritual de evolução |
+| **[index.html](./index.html)** | Entrada com `python -m http.server`: redireciona para `home.html` (evita listagem em `/`) |
+| **[serve.json](./serve.json)** | Config do pacote `serve` (`npx serve`): reescreve `/` → conteúdo de `home.html` (sem listagem, sem tela extra) |
 | **[home.html](./home.html)** | Boas-vindas (conteúdo do produto, foco em uso) |
 | **[cliente/app/index.html](./cliente/app/index.html)** | Como usar: copiar PRD na IDE |
 | **[cliente/app/explorador.html](./cliente/app/explorador.html)** | Árvore de **`contexto/`** + renderização de `.md` (requer servidor HTTP + manifesto) |

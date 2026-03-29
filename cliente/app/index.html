@@ -41,16 +41,17 @@
             <p class="local-srv-note">PowerShell (na raiz do pacote):</p>
             <pre class="local-srv-pre"><code>Set-Location "caminho\completo\ate\a-pasta-do-pacote"
 python -m http.server 8080</code></pre>
-            <p class="local-srv-note">macOS/Linux: <code>cd</code> em vez de <code>Set-Location</code>. Abra <a href="http://localhost:8080/home.html">http://localhost:8080/home.html</a>. Parar: <kbd>Ctrl</kbd>+<kbd>C</kbd>.</p>
+            <p class="local-srv-note">macOS/Linux: <code>cd</code> em vez de <code>Set-Location</code>. Abra <a href="http://localhost:8080/">http://localhost:8080/</a> (<code>index.html</code> → <code>home.html</code>) ou <code>/home.html</code>. Parar: <kbd>Ctrl</kbd>+<kbd>C</kbd>.</p>
 
-            <span class="local-srv-step-title">Node — <code>npx</code></span>
+            <span class="local-srv-step-title">Node — <code>npx serve</code></span>
+            <p class="local-srv-note">O <code>serve.json</code> na raiz faz <code>/</code> responder com o HTML de <code>home.html</code> (sem listagem). Não precisa flag extra no comando:</p>
             <pre class="local-srv-pre"><code>npx --yes serve -p 8080</code></pre>
-            <p class="local-srv-note">Use a URL exibida e abra <code>/home.html</code>.</p>
+            <p class="local-srv-note">Use a URL da raiz que o terminal mostrar; <code>/home.html</code> também funciona.</p>
 
             <span class="local-srv-step-title">Live Server (editor)</span>
             <p class="local-srv-note">VS Code / Cursor: extensão Live Server, pasta raiz do pacote, “Go Live”; confira se a raiz servida é a correta para <code>cliente/...</code>.</p>
 
-            <p class="local-srv-summary"><strong>Resumo:</strong> HTTP na raiz + <code>/home.html</code>. Explorador: HTTP + manifesto (<code>node cliente/scripts/gerar-estrutura-manifest.js</code>) conforme README.</p>
+            <p class="local-srv-summary"><strong>Resumo:</strong> HTTP na pasta do pacote — Python: redireciona via <code>index.html</code>; <code>npx serve</code>: rewrite via <code>serve.json</code>. Explorador: HTTP + manifesto (<code>node cliente/scripts/gerar-estrutura-manifest.js</code>) conforme README.</p>
           </section>
 
           <p>O pacote entrega uma <strong>base</strong>: um PRD em Markdown feito para você colar no chat do <strong>Cursor</strong>, <strong>VS Code</strong> (Copilot), <strong>Antigravity</strong> ou outro agente que leia a pasta do projeto.</p>

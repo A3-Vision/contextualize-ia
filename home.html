@@ -57,17 +57,17 @@
           <p class="local-srv-note">No PowerShell, na pasta raiz do pacote (onde está <code>home.html</code>):</p>
           <pre class="local-srv-pre"><code>Set-Location "caminho\completo\ate\a-pasta-do-pacote"
 python -m http.server 8080</code></pre>
-          <p class="local-srv-note">No macOS ou Linux, use <code>cd</code> no lugar de <code>Set-Location</code>. No navegador: <a href="http://localhost:8080/home.html">http://localhost:8080/home.html</a>. Para parar: <kbd>Ctrl</kbd>+<kbd>C</kbd> no terminal.</p>
+          <p class="local-srv-note">No macOS ou Linux, use <code>cd</code> no lugar de <code>Set-Location</code>. No navegador: <a href="http://localhost:8080/">http://localhost:8080/</a> — o <code>index.html</code> na raiz redireciona para <code>home.html</code>. Também pode abrir <code>/home.html</code> direto. Parar: <kbd>Ctrl</kbd>+<kbd>C</kbd> no terminal.</p>
 
-          <span class="local-srv-step-title">Opção 2 — Node (<code>npx</code>, sem instalar global)</span>
-          <p class="local-srv-note">Na mesma pasta raiz:</p>
+          <span class="local-srv-step-title">Opção 2 — Node (<code>npx serve</code>)</span>
+          <p class="local-srv-note">Na mesma pasta raiz o pacote já traz <code>serve.json</code>: o <code>serve</code> lê esse arquivo e a rota <code>/</code> <strong>entrega o conteúdo de</strong> <code>home.html</code> (reescreve internamente — URL continua <code>/</code>, sem página de listagem).</p>
           <pre class="local-srv-pre"><code>npx --yes serve -p 8080</code></pre>
-          <p class="local-srv-note">O <code>serve</code> costuma listar a pasta; abra <strong><code>/home.html</code></strong> na URL indicada (ex.: <a href="http://localhost:8080/home.html">http://localhost:8080/home.html</a>).</p>
+          <p class="local-srv-note">Abra a URL da raiz (ex.: <a href="http://localhost:8080/">http://localhost:8080/</a>). <code>/home.html</code> continua válido se quiser o caminho explícito.</p>
 
           <span class="local-srv-step-title">Opção 3 — Sem terminal (só editor)</span>
           <p class="local-srv-note">Extensão <strong>Live Server</strong> no VS Code ou Cursor: abra a pasta raiz do pacote como projeto e use “Go Live”. Confirme que a raiz servida é a do repositório para os links <code>cliente/...</code> funcionarem.</p>
 
-          <p class="local-srv-summary"><strong>Resumo:</strong> suba o servidor na raiz onde está <code>home.html</code> e use <code>/home.html</code> como entrada. O explorador (<code>cliente/app/explorador.html</code>) continua precisando de HTTP e, se for o caso, do manifesto gerado com <code>node cliente/scripts/gerar-estrutura-manifest.js</code>, como no README do pacote.</p>
+          <p class="local-srv-summary"><strong>Resumo:</strong> suba o servidor na raiz do pacote. <strong>Python:</strong> <code>/</code> usa <code>index.html</code> e redireciona para <code>home.html</code>. <strong><code>npx serve</code>:</strong> <code>serve.json</code> faz <code>/</code> servir <code>home.html</code> direto. O explorador (<code>cliente/app/explorador.html</code>) precisa de HTTP e, se for o caso, do manifesto (<code>node cliente/scripts/gerar-estrutura-manifest.js</code>), como no README.</p>
         </section>
       </div>
 
