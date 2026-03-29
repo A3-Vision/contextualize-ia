@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "eyebrow": "A3 Vision · Contextualize IA",
+    "headline": "Diagnóstico — seu contexto com IA",
+    "subtitulo": "Onde você está hoje, o que costuma travar e qual o próximo passo. Espelho para reflexão e para alinhar conversas com o agente da IDE — não é página de vendas.",
+    "cta_texto": "Abrir como usar no editor",
+    "selo": "Base PRD + CONTEXT vivo · Contextualize IA",
+    "video_url": ""
+  },
+  "secao_onde_estou": {
+    "titulo": "01 · Onde estou",
+    "itens": [
+      "Uso IA no dia a dia, mas o manual só existe no chat — não em arquivo.",
+      "Tenho pastas, mas não tenho um CONTEXT que o agente leia primeiro.",
+      "Já tenho CONTEXT, mas está parado — quero que evolua com perguntas e respostas.",
+      "Quero começar do zero com estrutura mínima e ir crescendo."
+    ]
+  },
+  "secao_travas": {
+    "titulo": "02 · Travas comuns",
+    "cards": [
+      {
+        "title": "Memória só no chat",
+        "desc": "Cada sessão nova recomeça; você repete histórico."
+      },
+      {
+        "title": "Agente inventa detalhe",
+        "desc": "Sem manual escrito, o modelo supõe o que não foi decidido."
+      },
+      {
+        "title": "Template estático",
+        "desc": "CONTEXT copiado uma vez e nunca atualizado com o que mudou."
+      }
+    ],
+    "nota": "O pacote trata o template estático com CONTEXT vivo, atualizado quando você e o agente conversam."
+  },
+  "secao_proximo_passo": {
+    "titulo": "03 · Próximo passo sugerido",
+    "passos": [
+      "Abrir a pasta do projeto na IDE.",
+      "Colar o conteúdo de templates/PRD-BASE-AGENTE-IDE.md no chat do agente.",
+      "Responder às perguntas até existir um CONTEXT.md inicial com lacunas explícitas.",
+      "Versionar (Git) quando fizer sentido — pequenos commits quando regras mudarem."
+    ],
+    "principio": "A estrutura final é sua — o produto entrega a base de criação (PRD + templates). O agente adapta ao que você disser."
+  },
+  "secao_checklist": {
+    "titulo": "04 · Checklist rápido",
+    "itens": [
+      "Existe um CONTEXT.md na raiz (ou caminho acordado com o agente)?",
+      "O CONTEXT diz o que o agente deve ler primeiro e o que não deve inventar?",
+      "Há lugar para decisões (decisoes/ ou similar) quando algo importante mudar?",
+      "O .gitignore protege o que não deve subir para o remoto?"
+    ]
+  },
+  "footer": {
+    "titulo": "A3 Vision",
+    "descricao": "Contextualize IA · material conforme licença do produto."
+  }
+}

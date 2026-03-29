@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contextualize IA — Diagnóstico · A3 Vision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app/assets/styles.css">
+</head>
+<body>
+  <div class="fw-wrap">
+    <div class="diagnostico-topbar">
+      <div>
+        <a href="index.html">← Boas-vindas</a>
+        ·
+        <a href="app/index.html">Como usar no editor</a>
+      </div>
+      <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">Claro / Escuro</button>
+    </div>
+
+    <header class="fw-header">
+      <div class="fw-eyebrow">A3 Vision · Contextualize IA</div>
+      <h1 class="fw-title">Diagnóstico — seu contexto com IA</h1>
+      <p class="fw-subtitle">Use as abas para se situar: onde você está hoje, o que costuma travar e qual o próximo passo natural. Não é página comercial — é espelho para reflexão e para alinhar conversas com o agente da sua IDE.</p>
+    </header>
+
+    <nav class="nav-tabs" aria-label="Seções do diagnóstico">
+      <button type="button" class="tab-btn active" onclick="showTab('onde', this)">01 · Onde estou</button>
+      <button type="button" class="tab-btn" onclick="showTab('travas', this)">02 · Travas comuns</button>
+      <button type="button" class="tab-btn" onclick="showTab('proximo', this)">03 · Próximo passo</button>
+      <button type="button" class="tab-btn" onclick="showTab('check', this)">04 · Checklist</button>
+    </nav>
+
+    <section id="tab-onde" class="section active">
+      <div class="section-label">Autopercepção</div>
+      <h2 class="section-title">O que descreve melhor sua situação hoje?</h2>
+      <p class="section-intro">Marque mentalmente. Isso ajuda o agente (depois do PRD) a não supor demais.</p>
+      <ul class="checklist">
+        <li>Uso IA no dia a dia, mas o “manual” só existe no chat — não em arquivo.</li>
+        <li>Tenho pastas, mas não tenho um CONTEXT que o agente leia primeiro.</li>
+        <li>Já tenho CONTEXT, mas está parado — quero que evolua com perguntas e respostas.</li>
+        <li>Quero começar do zero com estrutura mínima e ir crescendo.</li>
+      </ul>
+    </section>
+
+    <section id="tab-travas" class="section">
+      <div class="section-label">Fricção</div>
+      <h2 class="section-title">O que costuma travar</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-num">A</div>
+          <div class="card-head">Memória só no chat</div>
+          <div class="card-body">Cada sessão nova recomeça; você repete histórico.</div>
+        </div>
+        <div class="card">
+          <div class="card-num">B</div>
+          <div class="card-head">Agente inventa detalhe</div>
+          <div class="card-body">Sem manual escrito, o modelo supõe o que não foi decidido.</div>
+        </div>
+        <div class="card accent">
+          <div class="card-num">C</div>
+          <div class="card-head">Template estático</div>
+          <div class="card-body">CONTEXT copiado uma vez e nunca atualizado com o que mudou.</div>
+        </div>
+      </div>
+      <p class="section-intro" style="margin-top:1rem">O pacote Contextualize IA trata <strong>C</strong> com ritual: CONTEXT <strong>vivo</strong>, atualizado quando você e o agente conversam.</p>
+    </section>
+
+    <section id="tab-proximo" class="section">
+      <div class="section-label">Ação</div>
+      <h2 class="section-title">Próximo passo sugerido</h2>
+      <ul class="checklist">
+        <li><strong>1.</strong> Abrir a pasta do projeto na IDE.</li>
+        <li><strong>2.</strong> Colar o conteúdo de <code>templates/PRD-BASE-AGENTE-IDE.md</code> no chat do agente.</li>
+        <li><strong>3.</strong> Responder às perguntas até existir um <code>CONTEXT.md</code> inicial com lacunas explícitas.</li>
+        <li><strong>4.</strong> Versionar (Git) quando fizer sentido — pequenos commits quando regras mudarem.</li>
+      </ul>
+      <div class="callout">
+        <div class="callout-text"><strong>Lembrete:</strong> a estrutura final é <strong>sua</strong> — o produto só entrega a base de criação (PRD + templates). O agente adapta ao que você disser.</div>
+      </div>
+    </section>
+
+    <section id="tab-check" class="section">
+      <div class="section-label">Validação rápida</div>
+      <h2 class="section-title">Checklist</h2>
+      <ul class="checklist">
+        <li>Existe um <code>CONTEXT.md</code> na raiz (ou caminho acordado com o agente)?</li>
+        <li>O CONTEXT diz o que o agente deve ler primeiro e o que não deve inventar?</li>
+        <li>Há lugar para decisões (<code>decisoes/</code> ou similar) quando algo importante mudar?</li>
+        <li><code>.gitignore</code> protege o que não deve subir para o remoto?</li>
+      </ul>
+      <p class="section-intro">Copy estruturada para painéis: use <code>diagnostico-page-content.json</code> na pasta do produto, se precisar espelhar isso em outro front.</p>
+      <div class="cta-bar">
+        <a href="diagnostico-page-content.json" download>Baixar JSON do diagnóstico</a>
+      </div>
+    </section>
+
+    <footer class="footer-mini">A3 Vision · Contextualize IA</footer>
+  </div>
+  <script src="app/assets/theme.js"></script>
+  <script src="app/assets/app.js"></script>
+</body>
+</html>

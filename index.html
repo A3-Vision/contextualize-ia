@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contextualize IA — Bem-vindo · A3 Vision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="app/assets/theme.js"></script>
+  <link rel="stylesheet" href="app/assets/styles.css">
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+  <div class="fw-wrap landing-root">
+    <div class="landing-bar">
+      <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema claro ou escuro">Claro / Escuro</button>
+    </div>
+    <div class="landing-hero">
+      <div class="fw-eyebrow">A3 Vision · Contextualize IA</div>
+      <h1 class="fw-title">Bem-vindo ao Contextualize IA</h1>
+      <p class="landing-lead">
+        Este pacote é uma <strong>base</strong> para você usar com o <strong>agente da sua IDE</strong> (Cursor, VS Code, Antigravity…):
+        um PRD em Markdown que você cola no chat para o assistente <strong>montar a estrutura</strong> do repositório de contexto —
+        pastas, <code>CONTEXT.md</code> <strong>vivo</strong> (perguntas e respostas, não texto morto) e o que fizer sentido para o seu caso.
+      </p>
+      <div class="landing-actions">
+        <a id="download-zip" class="landing-btn landing-btn--primary" href="#">Baixar pacote (ZIP)</a>
+        <a class="landing-btn landing-btn--secondary" href="app/index.html">Como usar no editor</a>
+      </div>
+      <p class="landing-extra">
+        <a href="diagnostico.html">Diagnóstico — onde estou com contexto e IA</a>
+      </p>
+      <p class="landing-hint">
+        O arquivo principal para colar no agente está em <code>templates/PRD-BASE-AGENTE-IDE.md</code>.
+        Material aprofundado opcional em <code>conteudo/</code>; modelos em <code>templates/</code>.
+        Depois de extrair o ZIP, abra <code>index.html</code> nesta pasta para voltar aqui.
+      </p>
+    </div>
+    <footer class="footer-mini">
+      A3 Vision · Contextualize IA
+    </footer>
+  </div>
+  <script src="download-config.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var a = document.getElementById('download-zip');
+      if (a && typeof window.DOWNLOAD_ZIP_URL === 'string') {
+        var u = window.DOWNLOAD_ZIP_URL;
+        if (u.indexOf('SEU-USUARIO') === -1 && u.indexOf('SEU-REPO') === -1) {
+          a.href = u;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Copie o conteúdo abaixo para um arquivo chamado `.gitignore` na raiz do seu repositório de contexto.
+# Ajuste conforme seu ambiente.
+
+# Segredos e ambientes
+.env
+.env.*
+!.env.example
+
+# Dados sensíveis comuns (personalize)
+**/secrets/
+**/*-credentials*
+*.pem
+*.key
+
+# Pastas locais de editores e SO
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+
+# Se um dia houver Node no mesmo repo
+node_modules/
+
+# Arquivos temporários
+*.tmp
+*.log
+~$*
