@@ -653,35 +653,43 @@ html::-webkit-scrollbar-corner {
   margin-top: 0;
 }
 
-/* Copiar bloco de código (landing, explorador .md, etc.) */
+/* Copiar bloco de código (landing, explorador .md, etc.) — botão à direita, alinhado à 1ª linha */
 .code-copy-wrap {
-  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 8px;
   margin: 0 0 0.5rem;
 }
 
 .code-copy-wrap pre {
-  margin-bottom: 0;
-  padding-top: 2.35rem;
-  padding-right: 2.75rem;
+  flex: 1;
+  min-width: 0;
+  margin: 0 !important;
 }
 
-.code-copy-btn {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  z-index: 2;
+.code-copy-wrap .code-copy-btn {
+  position: static;
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
   padding: 0;
+  margin-top: 1rem;
   border-radius: 8px;
   border: 1px solid var(--border2);
   background: rgba(30, 30, 28, 0.92);
   color: var(--ink2);
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+/* Igual ao padding-top do pre (.md-content pre usa 1rem; .local-srv-pre usa 0.75rem) */
+.code-copy-wrap:has(pre.local-srv-pre) .code-copy-btn,
+.code-copy-wrap:has(pre.explorador-plain-pre) .code-copy-btn {
+  margin-top: 0.75rem;
 }
 
 .code-copy-btn:hover {

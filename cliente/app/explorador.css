@@ -49,6 +49,14 @@
   margin: 0;
 }
 
+/* Pré-visualização texto puro — padding alinhado ao botão copiar (.code-copy-wrap) */
+pre.explorador-plain-pre {
+  padding: 0.75rem 1rem;
+  border: 0.5px solid var(--border2);
+  border-radius: 8px;
+  background: var(--surf);
+}
+
 .explorador-panel h2 {
   font-family: var(--mono);
   font-size: 10px;
