@@ -5,6 +5,8 @@
 - **`estrutura-manifest.json`** — gerado pelo script em **`../scripts/`**; versionar ou regenerar após mudanças em `contexto/`.
 - **`explorador.css`** — layout do explorador.
 - **`assets/explorador.js`** — lógica da árvore e fetch dos arquivos.
+- **`assets/app-shell.css`** — fundo em gradiente, cards e botões de navegação compartilhados por `index.html`, `diagnostico.html` e `explorador.html` (alinhado à `home.html`).
+- **`venda-page-content.json`** — copy estruturada para landing comercial / `fixed_page_content` no painel; caminhos atualizados ao pacote atual (`cliente/`, `contexto/`, `home.html`).
 - **`diagnostico.html`** — autoavaliação em abas; usa `assets/app.js` e `assets/theme.js`.
 - **`landing.css`** — estilos extras da landing; importado por **`../../home.html`**.
 - **`download-config.js`** — `DOWNLOAD_ZIP_URL` para o botão de ZIP em **`../../home.html`**.

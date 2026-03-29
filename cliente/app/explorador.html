@@ -8,50 +8,59 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="assets/theme.js"></script>
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/app-shell.css">
   <link rel="stylesheet" href="explorador.css">
 </head>
 <body>
-  <div class="explorador-page">
-    <div class="diagnostico-topbar">
-      <div>
-        <a href="../../home.html">← Boas-vindas</a>
-        ·
-        <a href="index.html">Como usar</a>
+  <div class="app-shell">
+    <div class="app-inner app-inner--wide">
+      <div class="app-topbar">
+        <nav class="app-nav" aria-label="Navegação principal">
+          <a class="app-nav-btn" href="../../home.html">Boas-vindas</a>
+          <a class="app-nav-btn" href="index.html">Como usar</a>
+          <a class="app-nav-btn" href="diagnostico.html">Diagnóstico</a>
+        </nav>
+        <button type="button" class="app-theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">Claro / Escuro</button>
       </div>
-      <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">Claro / Escuro</button>
-    </div>
 
-    <header class="fw-header">
-      <div class="fw-eyebrow">Contextualize IA</div>
-      <h1 class="fw-title">Explorador — pasta contexto/</h1>
-      <p class="fw-subtitle">
-        Árvore gerada a partir de <code>estrutura-manifest.json</code>. Arquivos <code>.md</code> são renderizados aqui.
-        Serve na <strong>raiz do pacote</strong> com um servidor HTTP (ex.: <code>npx serve</code>) — <code>file://</code> não carrega os arquivos.
-      </p>
-    </header>
-
-    <div class="explorador-layout">
-      <aside class="explorador-panel explorador-panel--tree" aria-label="Árvore de pastas">
-        <h2>Estrutura</h2>
-        <div id="explorador-tree-root-label" class="tree-root-label"></div>
-        <div id="explorador-empty-callout" class="explorador-empty-callout" hidden></div>
-        <div id="explorador-search-wrap" class="explorador-search-wrap" hidden>
-          <label class="explorador-search-label" for="explorador-search">Pesquisar arquivos</label>
-          <input type="search" id="explorador-search" class="explorador-search" placeholder="Nome ou caminho (ex.: CONTEXT, docs/prd)" autocomplete="off" spellcheck="false" />
-          <p id="explorador-search-status" class="explorador-search-status" aria-live="polite"></p>
+      <div class="explorador-page">
+        <div class="app-card app-card--flush-bottom">
+          <header class="fw-header">
+            <div class="fw-eyebrow">Contextualize IA</div>
+            <h1 class="fw-title">Explorador — pasta contexto/</h1>
+            <p class="fw-subtitle">
+              Árvore gerada a partir de <code>estrutura-manifest.json</code>. Arquivos <code>.md</code> são renderizados aqui.
+              Serve na <strong>raiz do pacote</strong> com um servidor HTTP (ex.: <code>npx serve</code>) — <code>file://</code> não carrega os arquivos.
+            </p>
+          </header>
         </div>
-        <div id="explorador-tree-body" class="tree"></div>
-        <div id="explorador-search-results" class="explorador-search-results" hidden></div>
-        <p id="explorador-manifest-meta" class="explorador-meta"></p>
-      </aside>
-      <section class="explorador-panel explorador-panel--preview" aria-label="Pré-visualização">
-        <h2>Conteúdo</h2>
-        <p id="explorador-preview-title" class="preview-path">—</p>
-        <div id="explorador-preview"></div>
-      </section>
-    </div>
 
-    <footer class="footer-mini">A3 Vision · Contextualize IA</footer>
+        <div class="app-card app-card--flush-top">
+          <div class="explorador-layout">
+            <aside class="explorador-panel explorador-panel--tree" aria-label="Árvore de pastas">
+              <h2>Estrutura</h2>
+              <div id="explorador-tree-root-label" class="tree-root-label"></div>
+              <div id="explorador-empty-callout" class="explorador-empty-callout" hidden></div>
+              <div id="explorador-search-wrap" class="explorador-search-wrap" hidden>
+                <label class="explorador-search-label" for="explorador-search">Pesquisar arquivos</label>
+                <input type="search" id="explorador-search" class="explorador-search" placeholder="Nome ou caminho (ex.: CONTEXT, docs/prd)" autocomplete="off" spellcheck="false" />
+                <p id="explorador-search-status" class="explorador-search-status" aria-live="polite"></p>
+              </div>
+              <div id="explorador-tree-body" class="tree"></div>
+              <div id="explorador-search-results" class="explorador-search-results" hidden></div>
+              <p id="explorador-manifest-meta" class="explorador-meta"></p>
+            </aside>
+            <section class="explorador-panel explorador-panel--preview" aria-label="Pré-visualização">
+              <h2>Conteúdo</h2>
+              <p id="explorador-preview-title" class="preview-path">—</p>
+              <div id="explorador-preview"></div>
+            </section>
+          </div>
+        </div>
+
+        <footer class="app-footer">A3 Vision · Contextualize IA</footer>
+      </div>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" crossorigin="anonymous"></script>

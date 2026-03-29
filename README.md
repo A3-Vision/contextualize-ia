@@ -33,7 +33,9 @@ Quem já usa IA no dia a dia e quer **manual em arquivo** (não só no chat), co
 
 **Fluxo sugerido:** `home.html` → ler `cliente/app/index.html` → abrir **`cliente/templates/PRD-BASE-AGENTE-IDE.md`** → colar no agente. **Diagnóstico** é opcional.
 
-A trilha longa M0–M8 está só em Markdown em **`cliente/conteudo/`** (leitura fora da IDE ou no editor). O **explorador** é uma visão simples da pasta **`contexto/`** no navegador (não substitui IDE nem futuro app Next.js).
+A trilha longa M0–M8 está só em Markdown em **`cliente/conteudo/`** (leitura fora da IDE ou no editor). O **explorador** é uma visão simples da pasta **`contexto/`** no navegador (não substitui IDE nem futuro app Next.js). As telas **`home.html`** e **`cliente/app/*.html`** compartilham o mesmo idioma visual (gradiente, cards, botões de navegação).
+
+**Landing comercial (copy):** [`cliente/app/venda-page-content.json`](./cliente/app/venda-page-content.json)
 
 ---
 

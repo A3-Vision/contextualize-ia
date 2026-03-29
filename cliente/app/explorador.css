@@ -1,8 +1,7 @@
 /* Explorador contexto/ — layout duas colunas */
 .explorador-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 3rem;
+  margin: 0;
+  padding-bottom: 0;
 }
 
 .explorador-layout {

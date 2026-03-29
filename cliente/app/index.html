@@ -6,49 +6,54 @@
   <title>Contextualize IA — Como usar no seu editor · A3 Vision</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="assets/theme.js"></script>
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/app-shell.css">
 </head>
 <body>
-  <div class="fw-wrap">
-    <div class="diagnostico-topbar">
-      <div>
-        <a href="../../home.html">← Boas-vindas</a>
-        ·
-        <a href="explorador.html">Explorador contexto/</a>
-        ·
-        <a href="diagnostico.html">Diagnóstico</a>
+  <div class="app-shell">
+    <div class="app-inner">
+      <div class="app-topbar">
+        <nav class="app-nav" aria-label="Navegação principal">
+          <a class="app-nav-btn" href="../../home.html">Boas-vindas</a>
+          <a class="app-nav-btn" href="explorador.html">Explorador</a>
+          <a class="app-nav-btn" href="diagnostico.html">Diagnóstico</a>
+        </nav>
+        <button type="button" class="app-theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">Claro / Escuro</button>
       </div>
-      <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">Claro / Escuro</button>
+
+      <div class="app-card app-card--flush-bottom">
+        <header class="fw-header">
+          <div class="fw-eyebrow">Contextualize IA</div>
+          <h1 class="fw-title">Como usar no seu editor</h1>
+          <p class="fw-subtitle">Cole o PRD no agente da IDE; ele monta a estrutura em <code>contexto/</code> e um <code>CONTEXT.md</code> vivo com você.</p>
+        </header>
+      </div>
+
+      <div class="app-card app-card--flush-top">
+        <main class="md-content" style="padding-top: 0.25rem;">
+          <p>O pacote entrega uma <strong>base</strong>: um PRD em Markdown feito para você colar no chat do <strong>Cursor</strong>, <strong>VS Code</strong> (Copilot), <strong>Antigravity</strong> ou outro agente que leia a pasta do projeto.</p>
+          <p>O agente usa esse texto para <strong>criar a estrutura dentro de <code>contexto/</code></strong> na raiz do repositório (pastas, <code>contexto/CONTEXT.md</code>, <code>README</code>, <code>docs/</code>, <code>decisoes/</code> quando fizer sentido). O manual não mistura com o pacote em <code>cliente/</code>. O <code>CONTEXT.md</code> deve ser <strong>vivo</strong>: o agente faz perguntas, você responde, e o manual é atualizado junto com o seu contexto — nada de “template morto”.</p>
+
+          <h2>Passos</h2>
+          <ol>
+            <li>Crie uma pasta vazia (ou abra um repositório Git) no seu computador.</li>
+            <li>Abra essa pasta no <strong>Cursor / VS Code / Antigravity</strong>.</li>
+            <li>Abra o arquivo <code>cliente/templates/PRD-BASE-AGENTE-IDE.md</code> deste pacote, <strong>selecione tudo</strong> e <strong>cole no chat do agente</strong> (ou anexe o arquivo, se a IDE permitir).</li>
+            <li>Responda às perguntas do agente. Deixe que ele proponha a árvore sob <code>contexto/</code> e o primeiro <code>contexto/CONTEXT.md</code> — depois vocês refinam juntos.</li>
+          </ol>
+
+          <div class="callout" style="margin-top: 1.25rem;">
+            <div class="callout-text"><strong>Onde está o arquivo:</strong> na pasta do pacote, em <code>cliente/templates/PRD-BASE-AGENTE-IDE.md</code>. O template completo de <code>CONTEXT.md</code> está em <code>cliente/templates/TEMPLATE-CONTEXT.md</code> — o agente pode mesclar com o que você conversar.</div>
+          </div>
+
+          <h2>Material extra (opcional)</h2>
+          <p>Guia longo em Markdown, glossário e FAQ estão em <code>cliente/conteudo/</code> se quiser aprofundar fora do fluxo “só colar o PRD”.</p>
+        </main>
+      </div>
+
+      <footer class="app-footer">A3 Vision · Contextualize IA</footer>
     </div>
-
-    <header class="fw-header">
-      <div class="fw-eyebrow">Contextualize IA</div>
-      <h1 class="fw-title">Como usar no seu editor</h1>
-      <p class="fw-subtitle">Cole o PRD no agente da IDE; ele monta a estrutura e um <code>CONTEXT.md</code> vivo com você.</p>
-    </header>
-
-    <main class="md-content" style="padding-top: 0.5rem;">
-      <p>O pacote entrega uma <strong>base</strong>: um PRD em Markdown feito para você colar no chat do <strong>Cursor</strong>, <strong>VS Code</strong> (Copilot), <strong>Antigravity</strong> ou outro agente que leia a pasta do projeto.</p>
-      <p>O agente usa esse texto para <strong>criar a estrutura dentro de <code>contexto/</code></strong> na raiz do repositório (pastas, <code>contexto/CONTEXT.md</code>, <code>README</code>, <code>docs/</code>, <code>decisoes/</code> quando fizer sentido). O manual não mistura com o pacote em <code>cliente/</code>. O <code>CONTEXT.md</code> deve ser <strong>vivo</strong>: o agente faz perguntas, você responde, e o manual é atualizado junto com o seu contexto — nada de “template morto”.</p>
-
-      <h2>Passos</h2>
-      <ol>
-        <li>Crie uma pasta vazia (ou abra um repositório Git) no seu computador.</li>
-        <li>Abra essa pasta no <strong>Cursor / VS Code / Antigravity</strong>.</li>
-        <li>Abra o arquivo <code>cliente/templates/PRD-BASE-AGENTE-IDE.md</code> deste pacote, <strong>selecione tudo</strong> e <strong>cole no chat do agente</strong> (ou anexe o arquivo, se a IDE permitir).</li>
-        <li>Responda às perguntas do agente. Deixe que ele proponha a árvore sob <code>contexto/</code> e o primeiro <code>contexto/CONTEXT.md</code> — depois vocês refinam juntos.</li>
-      </ol>
-
-      <div class="callout" style="margin-top: 1.25rem;">
-        <div class="callout-text"><strong>Onde está o arquivo:</strong> na pasta do pacote, em <code>cliente/templates/PRD-BASE-AGENTE-IDE.md</code>. O template completo de <code>CONTEXT.md</code> está em <code>cliente/templates/TEMPLATE-CONTEXT.md</code> — o agente pode mesclar com o que você conversar.</div>
-      </div>
-
-      <h2>Material extra (opcional)</h2>
-      <p>Guia longo em Markdown, glossário e FAQ estão em <code>cliente/conteudo/</code> se quiser aprofundar fora do fluxo “só colar o PRD”.</p>
-    </main>
-
-    <footer class="footer-mini">A3 Vision · Contextualize IA</footer>
   </div>
-  <script src="assets/theme.js"></script>
 </body>
 </html>
