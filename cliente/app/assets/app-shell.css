@@ -194,6 +194,24 @@ body:has(.app-shell) {
   background: rgba(15, 23, 42, 0.06);
 }
 
+.app-shell .fw-subtitle a {
+  color: #5eead4;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.app-shell .fw-subtitle a:hover {
+  color: #fbbf24;
+}
+
+[data-theme="light"] .app-shell .fw-subtitle a {
+  color: #0d9488;
+}
+
+[data-theme="light"] .app-shell .fw-subtitle a:hover {
+  color: #c2410c;
+}
+
 .app-shell .md-content {
   color: rgba(226, 232, 240, 0.9);
 }

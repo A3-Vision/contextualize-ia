@@ -47,6 +47,30 @@
         </p>
       </div>
 
+      <div class="landing-server-wrap">
+        <section class="local-srv-block" aria-labelledby="home-srv-title">
+          <div class="local-srv-kicker">Servidor local</div>
+          <h2 id="home-srv-title" class="local-srv-title">Ver o pacote no navegador</h2>
+          <p class="local-srv-lead">Este front é <strong>HTML/CSS/JS estático</strong>; os caminhos partem da <strong>raiz do pacote</strong> (<code>home.html</code> → <code>cliente/app/...</code>). Abrir só com <code>file://</code> às vezes quebra scripts, fontes ou o <strong>explorador</strong> (que usa <code>fetch</code>). Use um <strong>servidor HTTP</strong> na pasta raiz.</p>
+
+          <span class="local-srv-step-title">Opção 1 — Python 3</span>
+          <p class="local-srv-note">No PowerShell, na pasta raiz do pacote (onde está <code>home.html</code>):</p>
+          <pre class="local-srv-pre"><code>Set-Location "caminho\completo\ate\a-pasta-do-pacote"
+python -m http.server 8080</code></pre>
+          <p class="local-srv-note">No macOS ou Linux, use <code>cd</code> no lugar de <code>Set-Location</code>. No navegador: <a href="http://localhost:8080/home.html">http://localhost:8080/home.html</a>. Para parar: <kbd>Ctrl</kbd>+<kbd>C</kbd> no terminal.</p>
+
+          <span class="local-srv-step-title">Opção 2 — Node (<code>npx</code>, sem instalar global)</span>
+          <p class="local-srv-note">Na mesma pasta raiz:</p>
+          <pre class="local-srv-pre"><code>npx --yes serve -p 8080</code></pre>
+          <p class="local-srv-note">O <code>serve</code> costuma listar a pasta; abra <strong><code>/home.html</code></strong> na URL indicada (ex.: <a href="http://localhost:8080/home.html">http://localhost:8080/home.html</a>).</p>
+
+          <span class="local-srv-step-title">Opção 3 — Sem terminal (só editor)</span>
+          <p class="local-srv-note">Extensão <strong>Live Server</strong> no VS Code ou Cursor: abra a pasta raiz do pacote como projeto e use “Go Live”. Confirme que a raiz servida é a do repositório para os links <code>cliente/...</code> funcionarem.</p>
+
+          <p class="local-srv-summary"><strong>Resumo:</strong> suba o servidor na raiz onde está <code>home.html</code> e use <code>/home.html</code> como entrada. O explorador (<code>cliente/app/explorador.html</code>) continua precisando de HTTP e, se for o caso, do manifesto gerado com <code>node cliente/scripts/gerar-estrutura-manifest.js</code>, como no README do pacote.</p>
+        </section>
+      </div>
+
       <footer class="landing-footer">
         A3 Vision · Contextualize IA
       </footer>

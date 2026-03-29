@@ -32,6 +32,27 @@
 
       <div class="app-card app-card--flush-top">
         <main class="md-content" style="padding-top: 0.25rem;">
+          <section class="local-srv-block" aria-labelledby="app-srv-title">
+            <div class="local-srv-kicker">Navegador</div>
+            <h2 id="app-srv-title">Servidor HTTP na raiz do pacote</h2>
+            <p class="local-srv-lead">O front é <strong>estático</strong>; caminhos partem da <strong>raiz</strong> (<code>home.html</code> → <code>cliente/app/...</code>). <code>file://</code> pode quebrar scripts, fontes ou o <strong>explorador</strong> (<code>fetch</code>). Prefira sempre um servidor na pasta onde está <code>home.html</code>.</p>
+
+            <span class="local-srv-step-title">Python 3</span>
+            <p class="local-srv-note">PowerShell (na raiz do pacote):</p>
+            <pre class="local-srv-pre"><code>Set-Location "caminho\completo\ate\a-pasta-do-pacote"
+python -m http.server 8080</code></pre>
+            <p class="local-srv-note">macOS/Linux: <code>cd</code> em vez de <code>Set-Location</code>. Abra <a href="http://localhost:8080/home.html">http://localhost:8080/home.html</a>. Parar: <kbd>Ctrl</kbd>+<kbd>C</kbd>.</p>
+
+            <span class="local-srv-step-title">Node — <code>npx</code></span>
+            <pre class="local-srv-pre"><code>npx --yes serve -p 8080</code></pre>
+            <p class="local-srv-note">Use a URL exibida e abra <code>/home.html</code>.</p>
+
+            <span class="local-srv-step-title">Live Server (editor)</span>
+            <p class="local-srv-note">VS Code / Cursor: extensão Live Server, pasta raiz do pacote, “Go Live”; confira se a raiz servida é a correta para <code>cliente/...</code>.</p>
+
+            <p class="local-srv-summary"><strong>Resumo:</strong> HTTP na raiz + <code>/home.html</code>. Explorador: HTTP + manifesto (<code>node cliente/scripts/gerar-estrutura-manifest.js</code>) conforme README.</p>
+          </section>
+
           <p>O pacote entrega uma <strong>base</strong>: um PRD em Markdown feito para você colar no chat do <strong>Cursor</strong>, <strong>VS Code</strong> (Copilot), <strong>Antigravity</strong> ou outro agente que leia a pasta do projeto.</p>
           <p>O agente usa esse texto para <strong>criar a estrutura dentro de <code>contexto/</code></strong> na raiz do repositório (pastas, <code>contexto/CONTEXT.md</code>, <code>README</code>, <code>docs/</code>, <code>decisoes/</code> quando fizer sentido). O manual não mistura com o pacote em <code>cliente/</code>. O <code>CONTEXT.md</code> deve ser <strong>vivo</strong>: o agente faz perguntas, você responde, e o manual é atualizado junto com o seu contexto — nada de “template morto”.</p>
 

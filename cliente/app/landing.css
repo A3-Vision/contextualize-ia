@@ -302,6 +302,66 @@ body:has(.landing-shell) {
   color: var(--ink);
 }
 
+.landing-server-wrap {
+  margin-top: 1.5rem;
+}
+
+.landing-shell .local-srv-block {
+  background: rgba(249, 115, 22, 0.07);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+[data-theme="light"] .landing-shell .local-srv-block {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(15, 23, 42, 0.1);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+}
+
+.landing-shell .local-srv-title,
+.landing-shell .local-srv-block > h2 {
+  color: #f8fafc;
+}
+
+[data-theme="light"] .landing-shell .local-srv-title,
+[data-theme="light"] .landing-shell .local-srv-block > h2 {
+  color: var(--ink);
+}
+
+.landing-shell .local-srv-lead {
+  color: rgba(203, 213, 225, 0.92);
+}
+
+[data-theme="light"] .landing-shell .local-srv-lead {
+  color: var(--ink2);
+}
+
+.landing-shell .local-srv-step-title {
+  color: rgba(248, 250, 252, 0.95);
+}
+
+[data-theme="light"] .landing-shell .local-srv-step-title {
+  color: var(--ink);
+}
+
+.landing-shell .local-srv-note {
+  color: rgba(148, 163, 184, 0.95);
+}
+
+[data-theme="light"] .landing-shell .local-srv-note {
+  color: var(--ink2);
+}
+
+.landing-shell .local-srv-summary {
+  color: rgba(203, 213, 225, 0.88);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .landing-shell .local-srv-summary {
+  color: var(--ink2);
+  border-top-color: rgba(15, 23, 42, 0.1);
+}
+
 .landing-footer {
   margin-top: 2.5rem;
   padding-top: 1.25rem;
