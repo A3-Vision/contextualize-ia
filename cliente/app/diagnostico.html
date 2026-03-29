@@ -26,7 +26,7 @@
         <header class="fw-header">
           <div class="fw-eyebrow">A3 Vision · Contextualize IA</div>
           <h1 class="fw-title">Diagnóstico — seu contexto com IA</h1>
-          <p class="fw-subtitle">Use as abas para se situar: onde você está hoje, o que costuma travar e qual o próximo passo natural. Não é página comercial — é espelho para reflexão e para alinhar conversas com o agente da sua IDE.</p>
+          <p class="fw-subtitle">Use as abas para se situar: onde você está hoje, o que costuma travar e qual o próximo passo natural. Espelho para reflexão e para alinhar conversas com o agente da sua IDE.</p>
         </header>
       </div>
 
@@ -96,9 +96,8 @@
             <li>Há lugar para decisões (<code>decisoes/</code> ou similar) quando algo importante mudar?</li>
             <li><code>.gitignore</code> protege o que não deve subir para o remoto?</li>
           </ul>
-          <p class="section-intro">Copy estruturada para painéis: use <code>cliente/app/diagnostico-page-content.json</code> na pasta do produto, se precisar espelhar isso em outro front.</p>
           <div style="text-align: center; margin-top: 1.5rem;">
-            <a class="app-nav-btn app-nav-btn--accent" href="diagnostico-page-content.json" download>Baixar JSON do diagnóstico</a>
+            <a id="download-pacote-zip" class="app-nav-btn app-nav-btn--accent" href="#" rel="noopener noreferrer">Baixar pacote oficial (ZIP no GitHub)</a>
           </div>
         </section>
       </div>
@@ -106,6 +105,18 @@
       <footer class="app-footer">A3 Vision · Contextualize IA</footer>
     </div>
   </div>
+  <script src="download-config.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var a = document.getElementById('download-pacote-zip');
+      if (a && typeof window.DOWNLOAD_ZIP_URL === 'string') {
+        var u = window.DOWNLOAD_ZIP_URL;
+        if (u.indexOf('SEU-USUARIO') === -1 && u.indexOf('SEU-REPO') === -1) {
+          a.href = u;
+        }
+      }
+    });
+  </script>
   <script src="assets/app.js"></script>
 </body>
 </html>

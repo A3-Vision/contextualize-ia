@@ -6,10 +6,10 @@
 - **`explorador.css`** — layout do explorador.
 - **`assets/explorador.js`** — lógica da árvore e fetch dos arquivos.
 - **`assets/app-shell.css`** — fundo em gradiente, cards e botões de navegação compartilhados por `index.html`, `diagnostico.html` e `explorador.html` (alinhado à `home.html`).
-- **`venda-page-content.json`** — copy estruturada para landing comercial / `fixed_page_content` no painel; caminhos atualizados ao pacote atual (`cliente/`, `contexto/`, `home.html`).
+- **`produto-page-content.json`** — resumo neutro do pacote (textos genéricos; sem preço nem CTA de venda). Útil se quiser espelhar o produto em outro front; a página de venda fica à parte.
 - **`diagnostico.html`** — autoavaliação em abas; usa `assets/app.js` e `assets/theme.js`.
 - **`landing.css`** — estilos extras da landing; importado por **`../../home.html`**.
-- **`download-config.js`** — `DOWNLOAD_ZIP_URL` para o botão de ZIP em **`../../home.html`**.
+- **`download-config.js`** — `DOWNLOAD_ZIP_URL` (repositório oficial) para o ZIP em **`../../home.html`** e no checklist de **`diagnostico.html`**.
 - **`diagnostico-page-content.json`** — copy estruturada para espelhar o diagnóstico em outro front.
 - **`assets/app.js`** — troca de abas; usado por **`diagnostico.html`**.
 - **`assets/styles.css`** — tema e componentes compartilhados (landing importa o mesmo arquivo).

@@ -20,12 +20,12 @@ Quem já usa IA no dia a dia e quer **manual em arquivo** (não só no chat), co
 |----------|-----------|
 | **[cliente/templates/PRD-BASE-AGENTE-IDE.md](./cliente/templates/PRD-BASE-AGENTE-IDE.md)** | **Principal:** instruções para o agente montar o repo e manter CONTEXT vivo |
 | **[cliente/templates/TEMPLATE-CONTEXT.md](./cliente/templates/TEMPLATE-CONTEXT.md)** | Modelo de CONTEXT com seção “perguntas em aberto” e ritual de evolução |
-| **[home.html](./home.html)** | Boas-vindas (conteúdo do produto, sem linguagem comercial) |
+| **[home.html](./home.html)** | Boas-vindas (conteúdo do produto, foco em uso) |
 | **[cliente/app/index.html](./cliente/app/index.html)** | Como usar: copiar PRD na IDE |
 | **[cliente/app/explorador.html](./cliente/app/explorador.html)** | Árvore de **`contexto/`** + renderização de `.md` (requer servidor HTTP + manifesto) |
 | **[cliente/app/estrutura-manifest.json](./cliente/app/estrutura-manifest.json)** | Lista de arquivos gerada por script — alimenta o explorador |
 | **[cliente/scripts/gerar-estrutura-manifest.js](./cliente/scripts/gerar-estrutura-manifest.js)** | `node cliente/scripts/gerar-estrutura-manifest.js` na raiz do pacote |
-| **[cliente/app/diagnostico.html](./cliente/app/diagnostico.html)** | Autoavaliação / travas / próximos passos (não é página de vendas) |
+| **[cliente/app/diagnostico.html](./cliente/app/diagnostico.html)** | Autoavaliação / travas / próximos passos |
 | **[cliente/app/diagnostico-page-content.json](./cliente/app/diagnostico-page-content.json)** | Copy para espelhar o diagnóstico em outro front, se precisar |
 | **[cliente/app/download-config.js](./cliente/app/download-config.js)** | `DOWNLOAD_ZIP_URL` — URL pública do ZIP, se aplicável |
 | **[cliente/conteudo/](./cliente/conteudo/)** | Material profundo **opcional** (guia M0–M8, glossário, troubleshooting); **[plano-de-acao.md](./cliente/conteudo/plano-de-acao.md)** é **interno A3**, não faz parte do método do usuário |
@@ -35,7 +35,7 @@ Quem já usa IA no dia a dia e quer **manual em arquivo** (não só no chat), co
 
 A trilha longa M0–M8 está só em Markdown em **`cliente/conteudo/`** (leitura fora da IDE ou no editor). O **explorador** é uma visão simples da pasta **`contexto/`** no navegador (não substitui IDE nem futuro app Next.js). As telas **`home.html`** e **`cliente/app/*.html`** compartilham o mesmo idioma visual (gradiente, cards, botões de navegação).
 
-**Landing comercial (copy):** [`cliente/app/venda-page-content.json`](./cliente/app/venda-page-content.json)
+**Resumo do pacote (copy neutra, opcional):** [`cliente/app/produto-page-content.json`](./cliente/app/produto-page-content.json) — venda e oferta ficam fora desta pasta.
 
 ---
 

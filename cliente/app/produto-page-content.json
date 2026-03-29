@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "eyebrow": "A3 Vision · Contextualize IA",
+    "headline": "Repositório de contexto para agentes de IA",
+    "subtitulo": "O manual fica na pasta — não só no chat. Este pacote traz PRD e templates em `cliente/templates/`, telas em `cliente/app/` e material opcional em `cliente/conteudo/`. O manual vivo (`contexto/CONTEXT.md` e afins) você cria no seu repositório com o agente da IDE, seguindo o PRD base.",
+    "selo": "Base PRD + templates · Contextualize IA"
+  },
+  "footer": {
+    "titulo": "A3 Vision",
+    "descricao": "Contextualize IA — conteúdo do pacote conforme licença."
+  },
+  "secao_visao": {
+    "titulo": "Contexto fora do chat",
+    "paragrafo": "Quando o contexto só existe dentro do chat, cada sessão pode parecer recomeçar. Um repositório de texto organizado — em especial `contexto/` — ancora regras e decisões para você e para o assistente.",
+    "itens": [
+      "**Chat:** memória frágil entre sessões; você repete histórico.",
+      "**Pasta + versionamento:** `contexto/CONTEXT.md` como fonte visível e evolutiva.",
+      "**Manual claro:** menos suposição do modelo sobre o que não foi decidido."
+    ]
+  },
+  "secao_friccao": {
+    "titulo": "O que costuma travar",
+    "itens": [
+      "**Terminal opcional:** na trilha mais guiada, GitHub Desktop e fluxo visual ajudam a começar.",
+      "**Começo pequeno:** poucos arquivos em `contexto/` até o PRD + agente refinarem a estrutura.",
+      "**CONTEXT explícito:** documentar o que não inventar e quando perguntar."
+    ],
+    "frase_destaque": "O objetivo é parar de depender só da memória do chat — com pasta visível e histórico quando você versionar."
+  },
+  "secao_trilhas": {
+    "titulo": "Duas formas de usar o mesmo material",
+    "paragrafo": "O conteúdo em Markdown cobre desde noções básicas até rotina com o repositório; você adapta o ritmo à sua familiaridade com ferramentas.",
+    "cards": [
+      {
+        "title": "Trilha guiada",
+        "desc": "GitHub, GitHub Desktop, edição simples. Foco em fluxo visual e primeiros passos sem obrigar terminal."
+      },
+      {
+        "title": "Trilha no editor",
+        "desc": "IDE com agente (Cursor, VS Code, etc.) abrindo a pasta do projeto. PRD colado no chat para montar e manter `contexto/`."
+      }
+    ]
+  },
+  "secao_conteudo_pacote": {
+    "titulo": "O que vem neste pacote",
+    "itens": [
+      "`cliente/templates/PRD-BASE-AGENTE-IDE.md` — ponto principal: colar no agente para criar/manter `contexto/`.",
+      "`cliente/templates/` — modelos (CONTEXT, README, checklist, ADR exemplo, .gitignore).",
+      "`cliente/app/index.html` — como usar o PRD na IDE.",
+      "`cliente/app/explorador.html` — árvore de `contexto/` + `.md` (com servidor HTTP e manifesto).",
+      "`cliente/app/diagnostico.html` — autoavaliação em abas; espelho JSON em `diagnostico-page-content.json`.",
+      "`cliente/conteudo/` — material aprofundado opcional (curso em Markdown, glossário, FAQ).",
+      "`home.html` na raiz — boas-vindas; `cliente/app/download-config.js` — URL do ZIP oficial."
+    ],
+    "microtexto": "Estrutura típica após usar o agente: `cliente/` (este pacote) + `contexto/` (seu manual vivo na raiz do repositório de trabalho)."
+  },
+  "secao_metodo": {
+    "titulo": "Sobre o método",
+    "paragrafo": "A A3 Vision usa repositório de contexto no dia a dia (ex.: a3-vision-os). Este pacote exporta o método e a base de arquivos — não o conteúdo interno de nenhuma empresa — para você aplicar no seu contexto."
+  },
+  "secao_proximo_passo": {
+    "titulo": "Por onde começar",
+    "paragrafo": "Abra `home.html` ou `cliente/app/index.html`, use o PRD com o agente e deixe o `contexto/` crescer com commits pequenos quando as regras mudarem."
+  }
+}

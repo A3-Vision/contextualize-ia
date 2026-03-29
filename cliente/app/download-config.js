@@ -1,6 +1,5 @@
 /**
- * URL do ZIP público (GitHub: branch main ou Release com asset .zip).
- * Substitua antes de publicar a oferta (landing na raiz: ../../home.html).
+ * ZIP oficial do repositório (branch main). Usado em home.html e no diagnóstico.
  */
 window.DOWNLOAD_ZIP_URL =
-  'https://github.com/SEU-USUARIO/SEU-REPO/archive/refs/heads/main.zip';
+  'https://github.com/A3-Vision/contextualize-ia/archive/refs/heads/main.zip';
