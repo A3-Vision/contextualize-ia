@@ -56,13 +56,13 @@ Depois, crie os arquivos e o primeiro `CONTEXT.md` com respostas incorporadas e 
 
 ## 7. Referência
 
-Este PRD faz parte do pacote **Contextualize IA** (A3 Vision). Templates adicionais podem estar na pasta `templates/` do mesmo pacote (`TEMPLATE-CONTEXT.md`, etc.).
+Este PRD faz parte do pacote **Contextualize IA** (A3 Vision). Templates adicionais podem estar na pasta `cliente/templates/` do mesmo pacote (`TEMPLATE-CONTEXT.md`, etc.).
 
 ## 8. Se esta pasta for o pacote Contextualize IA (distribuição)
 
-1. **Leia com prioridade** (antes de criar arquivos no repo do usuário): `templates/TEMPLATE-CONTEXT.md` e, se útil, `templates/CHECKLIST-SETUP.md` — use-os como base para o primeiro `CONTEXT.md` e estrutura.
-2. A pasta **`conteudo/`** é material **opcional** (aprofundamento, glossário, guia longo M0–M8). **Não** trate como lista obrigatória de entregas nem crie no repo do usuário uma cópia espelho de tudo que está em `conteudo/` **a menos que** o usuário peça explicitamente.
-3. Arquivos **`app/`** (HTML, `landing.css`, `diagnostico*.json`, `download-config.js`), **`home.html`** são a interface do pacote no navegador — **não** precisam ser recriados no repositório de contexto do usuário.
-4. Se o usuário abriu **outra pasta** (repo vazio ou já existente), ignore a árvore do pacote e siga as seções 1–6; use só `templates/` como referência se estiverem acessíveis no workspace.
+1. **Leia com prioridade** (antes de criar arquivos no repo do usuário): `cliente/templates/TEMPLATE-CONTEXT.md` e, se útil, `cliente/templates/CHECKLIST-SETUP.md` — use-os como base para o primeiro `CONTEXT.md` e estrutura.
+2. A pasta **`cliente/conteudo/`** é material **opcional** (aprofundamento, glossário, guia longo M0–M8). **Não** trate como lista obrigatória de entregas nem crie no repo do usuário uma cópia espelho de tudo que está em `cliente/conteudo/` **a menos que** o usuário peça explicitamente.
+3. Arquivos **`cliente/app/`** (HTML, `landing.css`, `diagnostico*.json`, `download-config.js`), **`home.html`** na raiz do pacote são a interface no navegador — **não** precisam ser recriados no repositório de contexto do usuário.
+4. Se o usuário abriu **outra pasta** (repo vazio ou já existente), ignore a árvore do pacote e siga as seções 1–6; use só `cliente/templates/` como referência se estiverem acessíveis no workspace.
 
 **Nota:** o agente **não** “lê o repositório inteiro” automaticamente só por colar este PRD — depende do que está no contexto da sessão e das ferramentas da IDE. Por isso este PRD é auto-suficiente; os templates reforçam o resultado quando você os abre ou incorpora.

@@ -1,4 +1,4 @@
-> **Documento interno (A3 Vision)** — roadmap de produto, precificação e canal. **Não** faz parte do método que o usuário final segue ao usar o pacote. O núcleo do produto para o cliente é **`templates/PRD-BASE-AGENTE-IDE.md`** + templates; o restante é opcional (ver [README.md](./README.md) desta pasta e [README.md](../README.md) do produto).
+> **Documento interno (A3 Vision)** — roadmap de produto, precificação e canal. **Não** faz parte do método que o usuário final segue ao usar o pacote. O núcleo do produto para o cliente é **`templates/PRD-BASE-AGENTE-IDE.md`** + templates; o restante é opcional (ver [README.md](./README.md) desta pasta e [README.md](../../README.md) do produto).
 
 # Plano de ação — criação do produto “Contextualize IA”
 
@@ -10,8 +10,8 @@ Objetivo: entregar um **produto vendável** cujo **núcleo** é **PRD + template
 |------|--------|
 | Fase 3 — Pacote de templates | **Feito** — ver [templates/README.md](../templates/README.md) |
 | Fase 4 — Redação do guia longo (M0–M8) | **Feito** — [curso-os-contexto-ia.md](./curso-os-contexto-ia.md) + [problemas-comuns.md](./problemas-comuns.md) (opcional para o usuário) |
-| Fase 0 — ICP e promessa comercial | Parcial — ver [publico-e-acessibilidade.md](./publico-e-acessibilidade.md); fechar no [README.md](../README.md) quando houver oferta pública |
-| Fase 5 — Embalagem e canal (HTML de entrada, ZIP, FAQ, oferta) | Parcial — `home.html`, `app/`, README do produto; pendente ZIP público estável, FAQ comercial, precificação no canal escolhido |
+| Fase 0 — ICP e promessa comercial | Parcial — ver [publico-e-acessibilidade.md](./publico-e-acessibilidade.md); fechar no [README.md](../../README.md) quando houver oferta pública |
+| Fase 5 — Embalagem e canal (HTML de entrada, ZIP, FAQ, oferta) | Parcial — `home.html`, `cliente/app/`, README do produto; pendente ZIP público estável, FAQ comercial, precificação no canal escolhido |
 | Fase 6 — Piloto externo | Pendente |
 
 ---
@@ -22,7 +22,7 @@ Objetivo: entregar um **produto vendável** cujo **núcleo** é **PRD + template
 |---------|-----------|
 | ICP do produto | Quem compra: solo creator, dev, consultor, microempresa? (pode ser 1 primário + 1 secundário) |
 | Promessa única | Uma frase: ex. “Do zero ao seu CONTEXT.md funcionando em um fim de semana” |
-| Formato de venda | Só Markdown + repo? Pack + vídeo? Comunidade? Atualizar preço alvo em [../../../../../financeiro/precificacao.md](../../../../../financeiro/precificacao.md) se for linha própria |
+| Formato de venda | Só Markdown + repo? Pack + vídeo? Comunidade? Atualizar preço alvo em [../../../../../../financeiro/precificacao.md](../../../../../../financeiro/precificacao.md) se for linha própria |
 | Critério de “pronto” | Checklist objetivo: o aluno consegue X, Y, Z |
 
 **Saída:** parágrafo de posicionamento + escopo “in / out” no README desta pasta.
@@ -91,10 +91,10 @@ Objetivo: entregar um **produto vendável** cujo **núcleo** é **PRD + template
 
 | Item | Descrição |
 |------|-----------|
-| Entrada do produto | Página de boas-vindas + instruções (`home.html`, `app/`); diagnóstico opcional; quando houver venda: problema, para quem, o que entra, preço, garantia |
+| Entrada do produto | Página de boas-vindas + instruções (`home.html`, `cliente/app/`); diagnóstico opcional; quando houver venda: problema, para quem, o que entra, preço, garantia |
 | FAQ | “Preciso saber programar?” “Funciona só com Cursor?” |
 | Política | Suporte por e-mail / comunidade / limites |
-| Distribuição | ZIP ou repo público; `app/download-config.js` com URL estável |
+| Distribuição | ZIP ou repo público; `cliente/app/download-config.js` com URL estável |
 
 ---
 
@@ -116,7 +116,7 @@ Objetivo: entregar um **produto vendável** cujo **núcleo** é **PRD + template
 
 ## Próximo passo imediato (esta semana)
 
-1. **ICP + promessa** — parcialmente em [publico-e-acessibilidade.md](./publico-e-acessibilidade.md); alinhar parágrafo único no [README.md](../README.md) quando a oferta pública fechar.  
+1. **ICP + promessa** — parcialmente em [publico-e-acessibilidade.md](./publico-e-acessibilidade.md); alinhar parágrafo único no [README.md](../../README.md) quando a oferta pública fechar.  
 2. **Núcleo PRD** — mantido em [templates/PRD-BASE-AGENTE-IDE.md](../templates/PRD-BASE-AGENTE-IDE.md); evoluir com piloto (tempo até estrutura útil, fricção de perguntas).  
 3. **Opcional:** vídeo curto e página “comece em 15 min” (ver acessibilidade); **piloto** com 2–3 pessoas (trilha guiada e/ou só PRD na IDE).
 
