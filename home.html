@@ -5,42 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contextualize IA — Bem-vindo · A3 Vision</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="cliente/app/assets/theme.js"></script>
   <link rel="stylesheet" href="cliente/app/assets/styles.css">
   <link rel="stylesheet" href="cliente/app/landing.css">
 </head>
 <body>
-  <div class="fw-wrap landing-root">
-    <div class="landing-bar">
-      <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema claro ou escuro">Claro / Escuro</button>
-    </div>
-    <div class="landing-hero">
-      <div class="fw-eyebrow">A3 Vision · Contextualize IA</div>
-      <h1 class="fw-title">Bem-vindo ao Contextualize IA</h1>
-      <p class="landing-lead">
-        Este pacote é uma <strong>base</strong> para você usar com o <strong>agente da sua IDE</strong> (Cursor, VS Code, Antigravity…):
-        um PRD em Markdown que você cola no chat para o assistente <strong>montar a estrutura</strong> do repositório de contexto —
-        pastas, <code>CONTEXT.md</code> <strong>vivo</strong> (perguntas e respostas, não texto morto) e o que fizer sentido para o seu caso.
-      </p>
-      <div class="landing-actions">
-        <a id="download-zip" class="landing-btn landing-btn--primary" href="#">Baixar pacote (ZIP)</a>
-        <a class="landing-btn landing-btn--secondary" href="cliente/app/index.html">Como usar no editor</a>
+  <div class="landing-shell">
+    <div class="fw-wrap landing-root">
+      <div class="landing-bar">
+        <button type="button" class="landing-theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema claro ou escuro">Claro / Escuro</button>
       </div>
-      <p class="landing-extra">
-        <a href="cliente/app/explorador.html">Explorador — ver pasta <code>contexto/</code> no navegador</a>
-        ·
-        <a href="cliente/app/diagnostico.html">Diagnóstico</a>
-      </p>
-      <p class="landing-hint">
-        O arquivo principal para colar no agente está em <code>cliente/templates/PRD-BASE-AGENTE-IDE.md</code>.
-        Material aprofundado opcional em <code>cliente/conteudo/</code>; modelos em <code>cliente/templates/</code>.
-        O PRD orienta o agente a criar o manual vivo em <code>contexto/</code> (não altera <code>cliente/</code>). Depois de extrair o ZIP, abra <code>home.html</code> nesta pasta para voltar aqui.
-      </p>
+
+      <div class="landing-hero-card">
+        <div class="landing-hero">
+          <div class="landing-eyebrow">A3 Vision · Contextualize IA</div>
+          <h1 class="landing-title">Bem-vindo ao Contextualize IA</h1>
+          <p class="landing-lead">
+            Este pacote é uma <strong>base</strong> para você usar com o <strong>agente da sua IDE</strong> (Cursor, VS Code, Antigravity…):
+            um PRD em Markdown que você cola no chat para o assistente <strong>montar a estrutura</strong> do repositório de contexto —
+            pastas, <code>CONTEXT.md</code> <strong>vivo</strong> (perguntas e respostas, não texto morto) e o que fizer sentido para o seu caso.
+          </p>
+
+          <div class="landing-actions landing-actions--primary">
+            <a id="download-zip" class="landing-btn landing-btn--gradient-orange" href="#">Baixar pacote (ZIP)</a>
+            <a class="landing-btn landing-btn--gradient-cyan" href="cliente/app/index.html">Como usar no editor</a>
+          </div>
+
+          <div class="landing-actions landing-actions--secondary" role="group" aria-label="Mais opções">
+            <a class="landing-btn landing-btn--ghost" href="cliente/app/explorador.html">Explorador — pasta contexto/</a>
+            <a class="landing-btn landing-btn--ghost" href="cliente/app/diagnostico.html">Diagnóstico</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="landing-hint-card">
+        <p class="landing-hint">
+          O arquivo principal para colar no agente está em <code>cliente/templates/PRD-BASE-AGENTE-IDE.md</code>.
+          Material aprofundado opcional em <code>cliente/conteudo/</code>; modelos em <code>cliente/templates/</code>.
+          O PRD orienta o agente a criar o manual vivo em <code>contexto/</code> (não altera <code>cliente/</code>). Depois de extrair o ZIP, abra <code>home.html</code> nesta pasta para voltar aqui.
+        </p>
+      </div>
+
+      <footer class="landing-footer">
+        A3 Vision · Contextualize IA
+      </footer>
     </div>
-    <footer class="footer-mini">
-      A3 Vision · Contextualize IA
-    </footer>
   </div>
   <script src="cliente/app/download-config.js"></script>
   <script>

@@ -1,26 +1,177 @@
-/* Landing raiz (../../home.html) — complementa assets/styles.css */
+/* Landing raiz (../../home.html) — visual tipo produto SaaS (gradientes, cards, botões) */
+
+.landing-shell {
+  min-height: 100vh;
+  padding: 1.5rem 1rem 3rem;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(34, 211, 238, 0.12), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 100% 50%, rgba(249, 115, 22, 0.08), transparent 50%),
+    linear-gradient(180deg, #070a10 0%, #0c1118 45%, #080b12 100%);
+}
+
+[data-theme="light"] .landing-shell {
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(14, 165, 233, 0.14), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 100% 40%, rgba(251, 146, 60, 0.1), transparent 50%),
+    linear-gradient(180deg, #f0f4f8 0%, #e8eef5 100%);
+}
+
+body:has(.landing-shell) {
+  padding: 0;
+  background: #070a10;
+}
+
+[data-theme="light"] body:has(.landing-shell) {
+  background: #f0f4f8;
+}
+
+.landing-shell .fw-wrap {
+  max-width: 720px;
+}
+
 .landing-bar {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing-theme-toggle {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.landing-theme-toggle:hover {
+  border-color: rgba(34, 211, 238, 0.55);
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.12);
+}
+
+[data-theme="light"] .landing-theme-toggle {
+  border-color: rgba(15, 23, 42, 0.18);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink2);
+}
+
+[data-theme="light"] .landing-theme-toggle:hover {
+  border-color: rgba(14, 165, 233, 0.45);
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.12);
 }
 
 .landing-root {
-  max-width: 720px;
   margin: 0 auto;
+}
+
+.landing-hero-card {
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.35) 0%,
+    rgba(37, 99, 235, 0.2) 40%,
+    rgba(249, 115, 22, 0.25) 100%
+  );
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+    0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] .landing-hero-card {
+  background: linear-gradient(
+    135deg,
+    rgba(14, 165, 233, 0.25) 0%,
+    rgba(99, 102, 241, 0.15) 50%,
+    rgba(251, 146, 60, 0.2) 100%
+  );
+  box-shadow:
+    0 0 0 1px rgba(15, 23, 42, 0.06) inset,
+    0 16px 40px rgba(15, 23, 42, 0.08);
 }
 
 .landing-hero {
   text-align: center;
-  padding: 3rem 0 2rem;
+  padding: 2.5rem 1.75rem 2rem;
+  border-radius: 18px;
+  background: rgba(10, 14, 22, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+[data-theme="light"] .landing-hero {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.landing-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #22d3ee, #38bdf8, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+
+[data-theme="light"] .landing-eyebrow {
+  background: linear-gradient(90deg, #0284c7, #2563eb, #ea580c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.landing-title {
+  font-family: var(--serif);
+  font-size: clamp(1.85rem, 5vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #f8fafc;
+  margin: 0 0 0.25rem;
+}
+
+[data-theme="light"] .landing-title {
+  color: var(--ink);
 }
 
 .landing-lead {
   font-size: 14px;
-  color: var(--ink2);
   line-height: 1.65;
   max-width: 560px;
   margin: 1rem auto 0;
+  color: rgba(226, 232, 240, 0.82);
+}
+
+[data-theme="light"] .landing-lead {
+  color: var(--ink2);
+}
+
+.landing-lead strong {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+[data-theme="light"] .landing-lead strong {
+  color: var(--ink);
+}
+
+.landing-lead code {
+  font-family: var(--mono);
+  font-size: 0.78em;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 7px;
+  border-radius: 6px;
+  color: #e2e8f0;
+}
+
+[data-theme="light"] .landing-lead code {
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--ink);
 }
 
 .landing-actions {
@@ -28,66 +179,147 @@
   gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 1.5rem;
   align-items: center;
 }
 
+.landing-actions--primary {
+  margin-top: 1.75rem;
+}
+
+.landing-actions--secondary {
+  margin-top: 1rem;
+}
+
 .landing-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 12px 22px;
+  border-radius: 999px;
   text-decoration: none;
-  transition: opacity 0.2s;
-  border: 0.5px solid transparent;
-}
-
-.landing-btn--primary {
-  color: var(--bg);
-  background: var(--amber);
-}
-
-.landing-btn--secondary {
-  color: var(--ink);
-  background: var(--surf);
-  border-color: var(--border2);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 .landing-btn:hover {
-  opacity: 0.92;
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+.landing-btn:active {
+  transform: translateY(0);
+}
+
+.landing-btn--gradient-orange {
+  color: #fff;
+  background: linear-gradient(90deg, #fb923c 0%, #f97316 40%, #dc2626 100%);
+  box-shadow: 0 4px 24px rgba(249, 115, 22, 0.35);
+}
+
+.landing-btn--gradient-orange:hover {
+  box-shadow: 0 6px 28px rgba(249, 115, 22, 0.45);
+}
+
+.landing-btn--gradient-cyan {
+  color: #fff;
+  background: linear-gradient(90deg, #22d3ee 0%, #0ea5e9 45%, #2563eb 100%);
+  box-shadow: 0 4px 24px rgba(14, 165, 233, 0.35);
+}
+
+.landing-btn--gradient-cyan:hover {
+  box-shadow: 0 6px 28px rgba(34, 211, 238, 0.35);
+}
+
+.landing-btn--ghost {
+  color: rgba(248, 250, 252, 0.95);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+}
+
+.landing-btn--ghost:hover {
+  border-color: rgba(34, 211, 238, 0.55);
+  box-shadow: 0 0 28px rgba(34, 211, 238, 0.12);
+  color: #fff;
+}
+
+[data-theme="light"] .landing-btn--ghost {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(15, 23, 42, 0.15);
+  box-shadow: none;
+}
+
+[data-theme="light"] .landing-btn--ghost:hover {
+  border-color: rgba(14, 165, 233, 0.45);
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.1);
+}
+
+.landing-hint-card {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.35rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .landing-hint-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
 }
 
 .landing-hint {
-  margin-top: 2rem;
+  margin: 0;
   font-size: 12px;
-  color: var(--ink3);
-  line-height: 1.55;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.6;
+  color: rgba(203, 213, 225, 0.9);
+  text-align: center;
+}
+
+[data-theme="light"] .landing-hint {
+  color: var(--ink2);
 }
 
 .landing-hint code {
   font-family: var(--mono);
   font-size: 10px;
-  background: var(--surf);
+  background: rgba(0, 0, 0, 0.25);
   padding: 2px 6px;
   border-radius: 4px;
+  color: #e2e8f0;
 }
 
-.landing-extra {
-  margin-top: 1rem;
-  font-size: 13px;
+[data-theme="light"] .landing-hint code {
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--ink);
 }
 
-.landing-extra a {
-  color: var(--teal);
-  text-decoration: none;
+.landing-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: rgba(148, 163, 184, 0.85);
+  font-family: var(--mono);
+  text-align: center;
 }
 
-.landing-extra a:hover {
-  text-decoration: underline;
+[data-theme="light"] .landing-footer {
+  border-top-color: rgba(15, 23, 42, 0.08);
+  color: var(--ink3);
+}
+
+@media (max-width: 480px) {
+  .landing-actions--primary .landing-btn,
+  .landing-actions--secondary .landing-btn {
+    width: 100%;
+  }
 }
