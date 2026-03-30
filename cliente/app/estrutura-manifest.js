@@ -1,0 +1,1 @@
+window.__CONTEXTUALIZA_ESTRUTURA_MANIFEST__ = {"generatedAt":"2026-03-30T03:23:41.899Z","rootLabel":"contexto","contextoExists":false,"note":"Gerado por node cliente/scripts/gerar-estrutura-manifest.js. Rode de novo após criar ou alterar arquivos em contexto/.","children":[]};

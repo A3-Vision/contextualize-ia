@@ -28,9 +28,10 @@ Para quem já usa IA no dia a dia e quer um **manual em arquivo** (não só no c
 | **[serve.json](./serve.json)** | Config do pacote `serve` (`npx serve`): reescreve `/` → conteúdo de `home.html` (sem listagem, sem tela extra) |
 | **[home.html](./home.html)** | Boas-vindas (conteúdo do produto, foco em uso) |
 | **[cliente/app/index.html](./cliente/app/index.html)** | Como usar: copiar PRD na IDE |
-| **[cliente/app/explorador.html](./cliente/app/explorador.html)** | Árvore de **`contexto/`** + renderização de `.md` (requer servidor HTTP + manifesto) |
-| **[cliente/app/estrutura-manifest.json](./cliente/app/estrutura-manifest.json)** | Lista de arquivos gerada por script — alimenta o explorador |
-| **[cliente/scripts/gerar-estrutura-manifest.js](./cliente/scripts/gerar-estrutura-manifest.js)** | `node cliente/scripts/gerar-estrutura-manifest.js` na raiz do pacote |
+| **[cliente/app/explorador.html](./cliente/app/explorador.html)** | Árvore de **`contexto/`** + pré-visualização de `.md` (manifesto em `.js` + `.json`; servidor HTTP na raiz para Markdown completo em todos os navegadores) |
+| **[cliente/app/estrutura-manifest.json](./cliente/app/estrutura-manifest.json)** | Lista de arquivos gerada por script — alimenta o explorador via `fetch` (HTTP) |
+| **[cliente/app/estrutura-manifest.js](./cliente/app/estrutura-manifest.js)** | Mesmo payload que o JSON — carregado por `<script>` para o explorador funcionar também em `file://` |
+| **[cliente/scripts/gerar-estrutura-manifest.js](./cliente/scripts/gerar-estrutura-manifest.js)** | `node cliente/scripts/gerar-estrutura-manifest.js` na raiz do pacote (gera `.json` e `.js`) |
 | **[cliente/app/diagnostico.html](./cliente/app/diagnostico.html)** | Autoavaliação / travas / próximos passos |
 | **[cliente/app/diagnostico-page-content.json](./cliente/app/diagnostico-page-content.json)** | Copy para espelhar o diagnóstico em outro front, se precisar |
 | **[cliente/app/download-config.js](./cliente/app/download-config.js)** | `DOWNLOAD_ZIP_URL` — URL pública do ZIP, se aplicável |

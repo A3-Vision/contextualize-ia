@@ -51,7 +51,7 @@ Se a raiz também contiver este pacote (pastas `cliente/`, `home.html`, etc.), e
 
 ### Ver o pacote no navegador (opcional)
 
-As telas **`home.html`** e **`cliente/app/*.html`** (como usar, explorador, diagnóstico) são **HTML/CSS/JS estático**. Para links, fontes e o **explorador** (`fetch`) funcionarem bem, use um **servidor HTTP** na **raiz do pacote** (onde está `home.html`), não apenas `file://`.
+As telas **`home.html`** e **`cliente/app/*.html`** (como usar, explorador, diagnóstico) são **HTML/CSS/JS estático**. Com **`file://`**, o explorador carrega a árvore via **`estrutura-manifest.js`** (gerado pelo script); a pré-visualização Markdown dos `.md` costuma exigir **servidor HTTP** na raiz do pacote — o navegador bloqueia a leitura automática de ficheiros locais. Fontes e estilos também se comportam melhor com HTTP.
 
 **Opções comuns:**
 

@@ -8,6 +8,7 @@ const path = require('path');
 const packageRoot = path.join(__dirname, '..', '..');
 const contextoDir = path.join(packageRoot, 'contexto');
 const outFile = path.join(packageRoot, 'cliente', 'app', 'estrutura-manifest.json');
+const outJsFile = path.join(packageRoot, 'cliente', 'app', 'estrutura-manifest.js');
 
 function walk(dir, baseRel) {
   const children = [];
@@ -58,7 +59,15 @@ const payload = {
 };
 
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
-fs.writeFileSync(outFile, JSON.stringify(payload, null, 2), 'utf8');
+const jsonPretty = JSON.stringify(payload, null, 2);
+fs.writeFileSync(outFile, jsonPretty, 'utf8');
+
+/** Emite JS para carregar em file:// (fetch a JSON local costuma falhar). */
+const jsBody =
+  'window.__CONTEXTUALIZA_ESTRUTURA_MANIFEST__ = ' +
+  JSON.stringify(payload).replace(/</g, '\\u003c') +
+  ';\n';
+fs.writeFileSync(outJsFile, jsBody, 'utf8');
 
 const status = contextoExists
   ? tree.length
@@ -66,4 +75,5 @@ const status = contextoExists
     : 'pasta vazia (ou só itens ocultos)'
   : 'pasta contexto/ não existe';
 console.log(`estrutura-manifest.json → ${outFile}`);
+console.log(`estrutura-manifest.js → ${outJsFile}`);
 console.log(`contextoExists=${contextoExists} · itens na raiz: ${tree.length} (${status})`);

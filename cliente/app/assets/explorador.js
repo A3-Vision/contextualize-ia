@@ -74,20 +74,71 @@
       });
   }
 
-  function openFile(relPath, btn) {
-    clearActiveFileUi();
-    if (btn) btn.classList.add('is-active');
-
-    var url = CONTEXTO_BASE + relPath.split('/').map(encodeURIComponent).join('/');
-    previewTitle.textContent = 'contexto/' + relPath;
-    previewEl.innerHTML =
-      '<p class="explorador-meta" style="margin:0">Carregando…</p>';
-
-    fetch(url)
+  /** fetch e, se falhar, XHR (alguns ambientes com file:// respondem só num deles). */
+  function loadText(url) {
+    return fetch(url)
       .then(function (r) {
         if (!r.ok) throw new Error(r.status + ' ' + r.statusText);
         return r.text();
       })
+      .catch(function () {
+        return new Promise(function (resolve, reject) {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', url, true);
+          xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 400) resolve(xhr.responseText);
+            else reject(new Error(xhr.status + ' ' + xhr.statusText));
+          };
+          xhr.onerror = function () {
+            reject(new Error('XHR failed'));
+          };
+          xhr.send();
+        });
+      });
+  }
+
+  function fileUrlForContexto(relPath) {
+    return CONTEXTO_BASE + relPath.split('/').map(encodeURIComponent).join('/');
+  }
+
+  function previewFileLoadError(relPath, err) {
+    var openHref = fileUrlForContexto(relPath);
+    var parts = [];
+    parts.push(
+      '<p class="explorador-error">Não foi possível carregar o conteúdo para pré-visualização.</p>'
+    );
+    if (location.protocol === 'file:') {
+      parts.push(
+        '<p><a href="' +
+          escapeHtml(openHref) +
+          '" target="_blank" rel="noopener">Abrir <code>contexto/' +
+          escapeHtml(relPath) +
+          '</code></a> num novo separador (texto bruto).</p>'
+      );
+      parts.push(
+        '<p class="explorador-meta">Em <code>file://</code> o navegador costuma bloquear a leitura automática. Use <code>npx serve</code> na raiz do pacote para Markdown renderizado aqui.</p>'
+      );
+    } else {
+      parts.push(
+        '<p class="explorador-meta">Confira se <code>contexto/' +
+          escapeHtml(relPath) +
+          '</code> existe e se o servidor está na raiz do pacote.</p>'
+      );
+    }
+    parts.push('<p class="explorador-meta">' + escapeHtml(String(err && err.message ? err.message : err)) + '</p>');
+    previewEl.innerHTML = parts.join('');
+  }
+
+  function openFile(relPath, btn) {
+    clearActiveFileUi();
+    if (btn) btn.classList.add('is-active');
+
+    var url = fileUrlForContexto(relPath);
+    previewTitle.textContent = 'contexto/' + relPath;
+    previewEl.innerHTML =
+      '<p class="explorador-meta" style="margin:0">Carregando…</p>';
+
+    loadText(url)
       .then(function (text) {
         lastPreviewRawText = text;
         var lower = relPath.toLowerCase();
@@ -119,12 +170,7 @@
         }
       })
       .catch(function (err) {
-        previewEl.innerHTML =
-          '<p class="explorador-error">Não foi possível abrir o arquivo. Use um servidor HTTP na raiz do pacote (ex.: <code>npx serve</code>) e confira se <code>contexto/' +
-          escapeHtml(relPath) +
-          '</code> existe.</p><p class="explorador-meta">' +
-          escapeHtml(String(err.message)) +
-          '</p>';
+        previewFileLoadError(relPath, err);
       });
   }
 
@@ -305,21 +351,30 @@
     box.hidden = false;
     box.innerHTML =
       '<h3>Não foi possível carregar a lista</h3>' +
-      '<p>Abra esta página com um <strong>servidor HTTP</strong> na raiz do pacote (ex.: <code>npx serve</code>). O protocolo <code>file://</code> bloqueia o carregamento do manifesto.</p>';
+      '<p>Confira se existe <code>cliente/app/estrutura-manifest.js</code> (rode <code>node cliente/scripts/gerar-estrutura-manifest.js</code> na raiz do pacote). Sem esse ficheiro, use um <strong>servidor HTTP</strong> na raiz (ex.: <code>npx serve</code>) para carregar <code>estrutura-manifest.json</code>.</p>';
     document.getElementById('explorador-search-wrap').hidden = true;
     document.getElementById('explorador-tree-body').innerHTML = '';
     document.getElementById('explorador-manifest-meta').textContent = '';
     previewEl.innerHTML =
-      '<p class="explorador-error">Use <code>npx serve</code> (ou similar) na pasta do pacote e acesse de novo o explorador.</p>';
+      '<p class="explorador-error">Gere o manifesto com o script na raiz do pacote ou use <code>npx serve</code> e recarregue.</p>';
   }
 
   setupSearch();
 
-  fetch(manifestUrl)
-    .then(function (r) {
-      if (!r.ok) throw new Error('Manifest não encontrado');
-      return r.json();
-    })
-    .then(renderManifest)
-    .catch(renderFetchError);
+  function loadManifest() {
+    var embedded = window.__CONTEXTUALIZA_ESTRUTURA_MANIFEST__;
+    if (typeof embedded !== 'undefined' && embedded !== null) {
+      renderManifest(embedded);
+      return;
+    }
+    fetch(manifestUrl)
+      .then(function (r) {
+        if (!r.ok) throw new Error('Manifest não encontrado');
+        return r.json();
+      })
+      .then(renderManifest)
+      .catch(renderFetchError);
+  }
+
+  loadManifest();
 })();
