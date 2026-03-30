@@ -13,7 +13,7 @@ Criar ou reorganizar um **repositório de contexto para IA**: pastas e arquivos 
 1. **Não inventar** dados sobre o usuário, negócio, prazos ou terceiros. O que não estiver escrito, **pergunte**.
 2. **Antes** de criar dezenas de arquivos, faça **2 a 5 perguntas** para entender: finalidade do repo, nível de conforto com Git/terminal, e se há dados sensíveis a evitar no versionamento.
 3. **Pasta `contexto/` (obrigatória para o que você criar):** tudo o que este PRD pedir para existir — `CONTEXT.md`, `README` de índice humano, `docs/`, `decisoes/`, pastas de domínio — deve ficar **dentro de `contexto/`** na **raiz do repositório** (`contexto/CONTEXT.md`, etc.). O agente deve **entender e manter** essa convenção em toda sessão: o “manual vivo” mora em `contexto/`; caminhos relativos no mapa do repo são relativos a `contexto/` salvo indicação contrária do usuário.
-4. **Não mexer no pacote de distribuição:** se existirem na raiz `cliente/`, `home.html`, `index.html` (redireciona para `home.html`), `serve.json` (config do `npx serve` para `/` → `home.html`) e/ou o `README.md` do produto Contextualize IA, **não** edite, mova, renomeie nem recrie esses artefatos dentro de `contexto/`. São leitura de referência (`cliente/templates/`, etc.).
+4. **Não mexer no pacote de distribuição:** se existirem na raiz `cliente/`, `home.html`, `index.html` (redireciona para `home.html`), `serve.json` (config do `npx serve` para `/` → `home.html`), `README.md` e/ou `README-CONTEXTUALIZA-IA.md` do produto Contextualize IA, **não** edite, mova, renomeie nem recrie esses artefatos dentro de `contexto/`. São leitura de referência (`cliente/templates/`, etc.).
 5. Propor uma **estrutura mínima viável** **dentro de `contexto/`** (poucas pastas) e **expandir só quando fizer sentido** para o domínio do usuário.
 6. Criar um **`contexto/CONTEXT.md` inicial** a partir do template mental abaixo (e de `cliente/templates/TEMPLATE-CONTEXT.md` se disponível), com seções claras e campos `<!-- preencher com o usuário -->` ou listas de “perguntas pendentes”.
 7. Definir um **ritual**: em novas sessões, o agente **lê `contexto/CONTEXT.md` primeiro** e propõe atualizações quando o usuário mudar de ideia ou de escopo.
@@ -41,7 +41,8 @@ Tudo abaixo que for **criado por este fluxo** fica sob **`contexto/`**. A raiz d
   index.html                 ← redireciona para home.html (python http.server)
   serve.json                 ← npx serve: / entrega home.html (rewrite)
   home.html
-  README.md                  ← README do produto (não sobrescrever com o manual do usuário)
+  README.md                  ← mapa do produto na raiz (não sobrescrever com o manual do usuário)
+  README-CONTEXTUALIZA-IA.md ← guia narrativo (idem)
 ```
 
 Pastas extras **dentro de `contexto/`** (ex.: `negocio/`, `pessoal/`, `clientes/`) só se o usuário confirmar que precisa.
@@ -77,7 +78,7 @@ Este PRD faz parte do pacote **Contextualize IA** (A3 Vision). Templates adicion
 
 1. **Leia com prioridade** (antes de criar arquivos vivos): `cliente/templates/TEMPLATE-CONTEXT.md` e, se útil, `cliente/templates/CHECKLIST-SETUP.md` — use-os como base para o primeiro **`contexto/CONTEXT.md`** e para a árvore **dentro de `contexto/`**.
 2. A pasta **`cliente/conteudo/`** é material **opcional** (aprofundamento, glossário, guia longo M0–M8). **Não** trate como lista obrigatória de entregas nem crie em `contexto/` uma cópia espelho de tudo que está em `cliente/conteudo/` **a menos que** o usuário peça explicitamente.
-3. **`cliente/`**, **`home.html`**, **`index.html`**, **`serve.json`** e o **README do produto** na raiz são **distribuição / landing** — **não** edite; a criação do manual do usuário é **só** em **`contexto/`**.
+3. **`cliente/`**, **`home.html`**, **`index.html`**, **`serve.json`**, **`README.md`** e **`README-CONTEXTUALIZA-IA.md`** na raiz são **distribuição / landing** — **não** edite; a criação do manual do usuário é **só** em **`contexto/`**.
 4. Arquivos **`cliente/app/`** (HTML, `landing.css`, `diagnostico*.json`, `download-config.js`) são interface no navegador — **não** recriar dentro de `contexto/`.
 5. Se o usuário abriu **outro** repositório (vazio ou já existente) **sem** o pacote, aplique a mesma regra: tudo que você criar para o manual vivo vai em **`contexto/`** na raiz desse repo; use `TEMPLATE-CONTEXT` só se o usuário anexar ou colar o trecho.
 6. **Explorador (opcional, humano):** o pacote pode incluir `cliente/app/explorador.html` e o script `cliente/scripts/gerar-estrutura-manifest.js`. Quem quiser ver `contexto/` no navegador roda o script e serve a pasta raiz com HTTP (ex.: `npx serve`); isso **não** é obrigatório para o fluxo PRD → agente.

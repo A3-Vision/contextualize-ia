@@ -20,7 +20,7 @@ meu-repo/
 │   └── inbox/                 ← opcional: arquivo solto antes de classificar
 ```
 
-**Se** o mesmo repositório contiver o pacote Contextualize IA, podem existir também na raiz (somente referência; o agente não edita): `cliente/`, `index.html` (Python HTTP), `serve.json` (`npx serve`), `home.html`, `README.md` do produto.
+**Se** o mesmo repositório contiver o pacote Contextualize IA, podem existir também na raiz (somente referência; o agente não edita): `cliente/`, `index.html` (Python HTTP), `serve.json` (`npx serve`), `home.html`, `README.md`, `README-CONTEXTUALIZA-IA.md`.
 
 ## Variações por perfil
 

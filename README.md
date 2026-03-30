@@ -1,16 +1,18 @@
 # Produto — Contextualize IA (base para contexto com IA na IDE)
 
-**O que o produto é:** uma **base de criação** — em especial o **`cliente/templates/PRD-BASE-AGENTE-IDE.md`**, para o usuário **copiar e colar no chat do agente** (Cursor, VS Code, Antigravity, etc.) com a pasta do projeto aberta. O PRD manda o agente criar o manual vivo **dentro de `contexto/`** na raiz do repositório (`contexto/CONTEXT.md`, `docs/`, `decisoes/`, etc.), **sem** editar o pacote em `cliente/` nem `home.html`. O pacote não substitui a conversa com o agente: **é o ponto de partida**.
+**Em síntese:** é uma **base de criação**. O arquivo central para o fluxo é **`cliente/templates/PRD-BASE-AGENTE-IDE.md`**: o usuário **copia e cola no chat do agente** (Cursor, VS Code, Antigravity, etc.) com a pasta do projeto aberta. O PRD **orienta** o agente a criar o manual vivo **dentro de `contexto/`** na raiz do repositório (`contexto/CONTEXT.md`, `docs/`, `decisoes/`, etc.), **sem** alterar o pacote em `cliente/` nem `home.html`. O pacote **não substitui** a conversa com o agente: é só o **ponto de partida**.
 
 **Tipo:** toolkit (Markdown + HTML opcional + material de apoio em `cliente/conteudo/`).
 
-**Mapa rápido:** o fluxo do usuário é **PRD → agente**; tudo em [`cliente/conteudo/`](./cliente/conteudo/) é **opcional** ou **interno** (ver [`cliente/conteudo/README.md`](./cliente/conteudo/README.md) — inclui o que é documentação A3 e não “método do aluno”).
+Leitura narrativa (o que é, para que serve, como usar): **[README-CONTEXTUALIZA-IA.md](./README-CONTEXTUALIZA-IA.md)**.
+
+**Em uma linha:** o fluxo natural é **PRD → agente**. O que está em [`cliente/conteudo/`](./cliente/conteudo/) é **opcional** ou **interno**; em [`cliente/conteudo/README.md`](./cliente/conteudo/README.md) está explícito o que é documentação A3 e o que **não** entra no método do aluno.
 
 ---
 
 ## Para quem é
 
-Quem já usa IA no dia a dia e quer **manual em arquivo** (não só no chat), com **repositório versionado** e **contexto alinhado** ao que decidiu — usando o fluxo natural do **agente da IDE**.
+Para quem já usa IA no dia a dia e quer um **manual em arquivo** (não só no chat), com **repositório versionado** e **contexto alinhado** às decisões — no fluxo habitual do **agente da IDE**.
 
 ---
 
@@ -18,6 +20,8 @@ Quem já usa IA no dia a dia e quer **manual em arquivo** (não só no chat), co
 
 | Artefato | Descrição |
 |----------|-----------|
+| **[README.md](./README.md)** | Mapa do pacote na raiz (este arquivo) |
+| **[README-CONTEXTUALIZA-IA.md](./README-CONTEXTUALIZA-IA.md)** | Guia narrativo: o que é, para que serve, como usar |
 | **[cliente/templates/PRD-BASE-AGENTE-IDE.md](./cliente/templates/PRD-BASE-AGENTE-IDE.md)** | **Principal:** instruções para o agente montar o repo e manter CONTEXT vivo |
 | **[cliente/templates/TEMPLATE-CONTEXT.md](./cliente/templates/TEMPLATE-CONTEXT.md)** | Modelo de CONTEXT com seção “perguntas em aberto” e ritual de evolução |
 | **[index.html](./index.html)** | Entrada com `python -m http.server`: redireciona para `home.html` (evita listagem em `/`) |
@@ -35,7 +39,7 @@ Quem já usa IA no dia a dia e quer **manual em arquivo** (não só no chat), co
 
 **Fluxo sugerido:** `home.html` → ler `cliente/app/index.html` → abrir **`cliente/templates/PRD-BASE-AGENTE-IDE.md`** → colar no agente. **Diagnóstico** é opcional.
 
-A trilha longa M0–M8 está só em Markdown em **`cliente/conteudo/`** (leitura fora da IDE ou no editor). O **explorador** é uma visão simples da pasta **`contexto/`** no navegador (não substitui IDE nem futuro app Next.js). As telas **`home.html`** e **`cliente/app/*.html`** compartilham o mesmo idioma visual (gradiente, cards, botões de navegação).
+A trilha longa M0–M8 está só em Markdown em **`cliente/conteudo/`** (leitura fora da IDE ou no editor). O **explorador** oferece uma visão simples da pasta **`contexto/`** no navegador; não substitui a IDE nem um aplicativo dedicado ao projeto. As telas **`home.html`** e **`cliente/app/*.html`** compartilham o mesmo idioma visual (gradiente, cards, botões de navegação).
 
 **Resumo do pacote (copy neutra, opcional):** [`cliente/app/produto-page-content.json`](./cliente/app/produto-page-content.json) — venda e oferta ficam fora desta pasta.
 
